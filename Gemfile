@@ -33,6 +33,11 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'devise'
 gem 'pundit'
+
+# To attach photos
+gem 'cloudinary'
+
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
