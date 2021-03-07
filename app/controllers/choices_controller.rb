@@ -8,7 +8,8 @@ class ChoicesController < ApplicationController
   end
 
   def create
-    @choice = Choice.new
+    @choice = Choice.new(choice_params)
+    binding.pry
     @choice.survey = @survey
     authorize @choice
     if @choice.save

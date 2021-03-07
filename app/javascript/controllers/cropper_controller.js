@@ -6,7 +6,8 @@ export default class extends Controller {
   static targets = [ 'image' ];
 
   connect() {
-    const cropper = new Cropper(this.imageTarget, {
+    this.cropper = new Cropper(this.imageTarget, {
+      initialAspectRatio: 4 / 5,
       crop(event) {
         console.log(event.detail.x);
         console.log(event.detail.y);
@@ -17,21 +18,25 @@ export default class extends Controller {
         console.log(event.detail.scaleY);
       },
     });
-    console.log(cropper);
   }
 
   addChoice() {
-    fetchWithToken(`/surveys/${this.data.get("survey-id")}/choices`, {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ choice: { photo: "Sweet Tits" } }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
+    this.cropper.getCroppedCanvas().toBlob((blob) => {
+      const formData = new FormData();
+      formData.append('croppedImage', blob/*, 'temp.png' */);
+      fetchWithToken(`/surveys/${this.data.get("survey-id")}/choices`, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ choice: { photo: formData } }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+        });
     });
+
   }
 }
