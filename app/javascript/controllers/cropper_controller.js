@@ -16,5 +16,10 @@ export default class extends Controller {
       console.log(event.detail.scaleY);
     },
   });
+  console.log(cropper);
+  }
+
+  addChoice() {
+    console.log("Adding Choice!");
   }
 }
