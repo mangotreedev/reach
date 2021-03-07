@@ -6,5 +6,5 @@ class Survey < ApplicationRecord
 
   validates :style, presence: true
 
-  enum style: [:one_v_one, :group]
+  enum style: [:one_v_one_photo, :group_photo]
 end
