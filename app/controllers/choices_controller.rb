@@ -8,9 +8,14 @@ class ChoicesController < ApplicationController
   end
 
   def create
-    @choice = Choice.new(choice_params)
+    @choice = Choice.new
     @choice.survey = @survey
     authorize @choice
+    if @choice.save
+      render json: { success: true }
+    else
+      render json: { success: false, errors: choice.errors.messages }, status: :unprocessable_entity
+    end
   end
 
   private
