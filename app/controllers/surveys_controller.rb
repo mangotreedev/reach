@@ -9,7 +9,7 @@ class SurveysController < ApplicationController
     @survey.user = current_user
     authorize @survey
     if @survey.save
-      redirect_to root_path
+      redirect_to new_survey_choice_path(@survey)
     else
       render :new
     end

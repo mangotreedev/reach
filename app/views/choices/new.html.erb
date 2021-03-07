@@ -1,0 +1,6 @@
+<h1 class="text-6xl font-bold">Add choices to your survey!</h1>
+
+<div class='cropper'>
+  <%= cl_image_tag @survey.photo.key, id: 'js-crop-image', class: 'cropper__image', crop: :fill %>
+</div>
+
