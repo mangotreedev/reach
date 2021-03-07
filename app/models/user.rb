@@ -8,4 +8,6 @@ class User < ApplicationRecord
   validates :username, uniqueness: {
     message: "%{value} is already taken!"
   }
+
+  has_many :surveys
 end
