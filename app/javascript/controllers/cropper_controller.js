@@ -7,36 +7,24 @@ export default class extends Controller {
 
   connect() {
     this.cropper = new Cropper(this.imageTarget, {
-      initialAspectRatio: 4 / 5,
-      crop(event) {
-        console.log(event.detail.x);
-        console.log(event.detail.y);
-        console.log(event.detail.width);
-        console.log(event.detail.height);
-        console.log(event.detail.rotate);
-        console.log(event.detail.scaleX);
-        console.log(event.detail.scaleY);
-      },
+      aspectRatio: 4 / 5
     });
   }
 
   addChoice() {
-    this.cropper.getCroppedCanvas().toBlob((blob) => {
-      const formData = new FormData();
-      formData.append('croppedImage', blob/*, 'temp.png' */);
-      fetchWithToken(`/surveys/${this.data.get("survey-id")}/choices`, {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ choice: { photo: formData } }),
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          console.log(data);
-        });
+    const data = this.cropper.getCropBoxData();
+    console.log(data);
+    fetchWithToken(`/surveys/${this.data.get("survey-id")}/choices`, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ choice: data }),
+    })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
     });
-
-  }
+  };
 }
