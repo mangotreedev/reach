@@ -5,8 +5,9 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
 
-  resources :surveys, only: [:new, :create] do
+  resources :surveys, only: [:new, :create, :show] do
     resources :choices, only: [:new, :create]
+    resource :publication, only: :create
   end
   resources :choices, only: :destroy
 end

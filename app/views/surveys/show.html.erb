@@ -1,0 +1,11 @@
+<h1 class="text-6xl font-bold">Who's the reacher</h1>
+
+  <%= cl_image_tag @survey.photo.key, height: 500, width: 700, crop: :fill%>
+
+<h1 class="text-4xl font-bold">Your choices</h1>
+
+<div class="choices">
+  <% @survey.choices.each do |choice| %>
+    <%= render 'choices/choice', choice: choice %>
+  <% end %>
+</div>

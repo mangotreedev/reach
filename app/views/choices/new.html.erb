@@ -14,3 +14,8 @@
     <%= render 'choices/choice', choice: choice %>
   <% end %>
 </div>
+
+<%= link_to "Publish Photo for Rating",
+    survey_publication_path(@survey),
+    method: :post,
+    class: 'px-12 py-3 bg-yellow-400 text-white rounded border border-yellow-400 inline-block hover:bg-yellow-300 hover:border-yellow-300 focus:outline-none transition duration-300'  %>
