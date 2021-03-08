@@ -12,7 +12,7 @@ export default class extends Controller {
   }
 
   addChoice() {
-    const data = this.cropper.getCropBoxData();
+    const data = this.cropper.getData({rounded: true});
     console.log(data);
     fetchWithToken(`/surveys/${this.data.get("survey-id")}/choices`, {
       method: "POST",
@@ -24,7 +24,8 @@ export default class extends Controller {
     })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
+      const choicesContainer = document.querySelector('.choices');
+      choicesContainer.insertAdjacentHTML('beforeend', data.choice)
     });
   };
 }

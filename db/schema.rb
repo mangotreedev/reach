@@ -47,10 +47,10 @@ ActiveRecord::Schema.define(version: 2021_03_07_234050) do
     t.bigint "survey_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.float "left"
-    t.float "top"
-    t.float "width"
-    t.float "height"
+    t.integer "x"
+    t.integer "y"
+    t.integer "width"
+    t.integer "height"
     t.index ["survey_id"], name: "index_choices_on_survey_id"
   end
 

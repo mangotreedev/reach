@@ -9,11 +9,13 @@ class ChoicesController < ApplicationController
 
   def create
     @choice = Choice.new(choice_params)
-    binding.pry
     @choice.survey = @survey
     authorize @choice
     if @choice.save
-      render json: { success: true }
+
+      render json: {
+        choice: render_to_string(partial: "choice", locals: { choice: @choice }, formats: :html)
+      }
     else
       render json: { success: false, errors: choice.errors.messages }, status: :unprocessable_entity
     end
@@ -22,7 +24,7 @@ class ChoicesController < ApplicationController
   private
 
   def choice_params
-    params.require(:choice).permit(:photo)
+    params.require(:choice).permit(:x, :y, :width, :height)
   end
 
   def set_survey
