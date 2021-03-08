@@ -11,6 +11,6 @@
 
 <div class="choices">
   <% @survey.choices.each do |choice| %>
-
+    <%= render 'choices/choice', choice: choice %>
   <% end %>
 </div>

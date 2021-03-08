@@ -1,4 +1,9 @@
 <div class="choice">
   Choice <%= choice.id %>
+  <%= link_to "<i class='fas fa-dumpster-fire'></i>".html_safe,
+          choice_path(choice),
+          method: :delete,
+          remote: true,
+          class: "text-red-600" %>
   <%= cl_image_tag @survey.photo.key, x: choice.x, y: choice.y, width: choice.width, height: choice.height, crop: :crop %>
 </div>

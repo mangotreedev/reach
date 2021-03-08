@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   resources :surveys, only: [:new, :create] do
     resources :choices, only: [:new, :create]
   end
+  resources :choices, only: :destroy
 end
