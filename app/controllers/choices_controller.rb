@@ -12,13 +12,19 @@ class ChoicesController < ApplicationController
     @choice.survey = @survey
     authorize @choice
     if @choice.save
-
       render json: {
         choice: render_to_string(partial: "choice", locals: { choice: @choice }, formats: :html)
       }
     else
       render json: { success: false, errors: choice.errors.messages }, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @choice = Choice.find(params[:id])
+    authorize @choice
+    @choice.destroy
+    redirect_to new_survey_choice_path(@choice.survey)
   end
 
   private

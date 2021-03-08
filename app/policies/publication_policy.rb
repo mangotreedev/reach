@@ -1,4 +1,4 @@
-class SurveyPolicy < ApplicationPolicy
+class PublicationPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
@@ -6,10 +6,6 @@ class SurveyPolicy < ApplicationPolicy
   end
 
   def create?
-    user
-  end
-
-  def show?
-    record.published?
+    record.user == user
   end
 end
