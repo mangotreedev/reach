@@ -1,0 +1,7 @@
+<h1 class="text-6xl font-bold">Add a new survey!</h1>
+
+<%= simple_form_for @survey do |f| %>
+  <%= f.input :style, as: :radio_buttons, collection: Survey.styles.keys, label_method: :humanize %>
+  <%= f.input :photo, as: :file %>
+  <%= f.button :submit %>
+<% end %>

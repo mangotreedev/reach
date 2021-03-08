@@ -1,0 +1,7 @@
+.cropper {
+  max-width: 600px;
+  &__image {
+    display: block;
+    max-width: 100%;
+  }
+}

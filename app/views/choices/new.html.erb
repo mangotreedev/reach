@@ -1,0 +1,16 @@
+<h1 class="text-6xl font-bold">Add choices to your survey!</h1>
+
+<div class='cropper' data-controller="cropper" data-cropper-survey-id="<%= @survey.id %>">
+  <%= cl_image_tag @survey.photo.key, id: 'js-crop-image', class: 'cropper__image', crop: :fill, data: { 'cropper-target': 'image'} %>
+  <button
+    data-action="click->cropper#addChoice"
+    class='px-12 py-3 bg-yellow-400 text-white rounded border border-yellow-400 inline-block hover:bg-yellow-300 hover:border-yellow-300 focus:outline-none transition duration-300'>
+      Add Choice
+  </button>
+</div>
+
+<div class="choices">
+  <% @survey.choices.each do |choice| %>
+
+  <% end %>
+</div>
