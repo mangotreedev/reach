@@ -1,6 +1,7 @@
 class Survey < ApplicationRecord
   belongs_to :user
   has_many :choices
+  has_many :votes, through: :choices
 
   has_one_attached :photo
 
@@ -10,5 +11,9 @@ class Survey < ApplicationRecord
 
   def published!
     update(published: true)
+  end
+
+  def total_votes
+    votes.count
   end
 end

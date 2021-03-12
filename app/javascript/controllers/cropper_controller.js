@@ -7,7 +7,9 @@ export default class extends Controller {
 
   connect() {
     this.cropper = new Cropper(this.imageTarget, {
-      aspectRatio: 4 / 5
+      aspectRatio: 4 / 5,
+      movable: false,
+      zoomeOnWheel: false
     });
   }
 

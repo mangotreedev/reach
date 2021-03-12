@@ -6,12 +6,10 @@
   </div>
 
   <div class="survey__choices">
-    <h1 class="text-6xl font-bold">The Choices</h1>
+    <h1 class="text-6xl font-bold">The Results</h1>
     <div class="choices">
       <% @survey.choices.each do |choice| %>
-        <%= link_to choice_votes_path(choice), method: :post do %>
-          <%= render 'choices/choice', choice: choice %>
-        <% end %>
+        <%= render 'choices/result', choice: choice %>
       <% end %>
     </div>
   </div>

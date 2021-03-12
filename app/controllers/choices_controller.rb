@@ -13,7 +13,7 @@ class ChoicesController < ApplicationController
     authorize @choice
     if @choice.save
       render json: {
-        choice: render_to_string(partial: "choice", locals: { choice: @choice }, formats: :html)
+        choice: render_to_string(partial: "pending", locals: { choice: @choice }, formats: :html)
       }
     else
       render json: { success: false, errors: choice.errors.messages }, status: :unprocessable_entity
