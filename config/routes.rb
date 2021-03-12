@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   resources :surveys, only: [:new, :create, :show] do
     resources :choices, only: [:new, :create]
     resource :publication, only: :create
+    resource :results, only: :show
   end
-  resources :choices, only: :destroy
+
+  resources :choices, only: :destroy do
+    resources :votes, only: [:create]
+  end
 end

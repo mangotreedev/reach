@@ -37,6 +37,7 @@ gem 'pundit'
 # To attach photos
 gem 'cloudinary'
 
+gem 'rexml'
 
 group :development, :test do
   gem 'pry-byebug'
