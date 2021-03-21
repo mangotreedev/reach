@@ -1,4 +1,6 @@
 class SurveysController < ApplicationController
+  skip_before_action :authenticate_user!, only: :show
+
   def new
     @survey = Survey.new
     authorize @survey
