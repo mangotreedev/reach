@@ -1,9 +1,9 @@
 class RandomSurveySelector
   class << self
     def call(cookie)
-      Survey.joins(choices: :votes)
+      voted_surveys = Survey.joins(choices: :votes).where(choices: { votes: {cookie: cookie}})
+
+      surveys = Survey.published.where.not(id: voted_surveys.map(&:id)).count
     end
   end
-
-  private
 end

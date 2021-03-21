@@ -6,6 +6,9 @@ class Survey < ApplicationRecord
   has_one_attached :photo
 
   validates :style, presence: true
+
+  scope :published, -> { where(published: true)}
+
   #                   0                1
   enum style: [:one_v_one_photo, :group_photo]
 
