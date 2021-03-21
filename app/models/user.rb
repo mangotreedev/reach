@@ -9,5 +9,5 @@ class User < ApplicationRecord
     message: "%{value} is already taken!"
   }
 
-  has_many :surveys
+  has_many :surveys, dependent: :destroy
 end
