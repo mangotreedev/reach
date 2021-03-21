@@ -1,18 +1,1 @@
-
-<div class="flex survey">
-  <div class="survey__photo">
-    <h1 class="text-6xl font-bold">Who's the reacher</h1>
-    <%= cl_image_tag @survey.photo.key, height: 500, width: 700, crop: :limit%>
-  </div>
-
-  <div class="survey__choices">
-    <h1 class="text-6xl font-bold">The Choices</h1>
-    <div class="choices">
-      <% @survey.choices.each do |choice| %>
-        <%= link_to choice_votes_path(choice), method: :post do %>
-          <%= render 'choices/choice', choice: choice %>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
-</div>
+<%= render 'shared/survey_card', survey: @survey %>
