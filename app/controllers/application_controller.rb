@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
+  before_action :find_or_generate_cookie
   add_flash_types :info, :success
 
   include Pundit
@@ -28,5 +29,10 @@ class ApplicationController < ActionController::Base
 
   def skip_pundit?
     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
+  end
+
+  def find_or_generate_cookie
+    cookies[:reach_cookie] = SecureRandom.uuid unless cookies[:reach_cookie]
+    @cookie = cookies[:reach_cookie]
   end
 end

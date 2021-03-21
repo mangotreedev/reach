@@ -9,10 +9,5 @@ class PagesController < ApplicationController
 
   def kitchensink; end
 
-  private
 
-  def find_or_generate_cookie
-    cookies[:reach_cookie] = SecureRandom.uuid unless cookies[:reach_cookie]
-    @cookie = cookies[:reach_cookie]
-  end
 end
