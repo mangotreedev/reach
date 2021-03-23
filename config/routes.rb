@@ -17,3 +17,7 @@ Rails.application.routes.draw do
 end
 
 
+# TODO: Positive uplifting lingo for who is the reacher
+# TODO: Make survey disappear after a period of time
+# TODO: immediate survey removal after reporting, and then need to be placed back in thru approval
+# TODO: After 100 votes if there is a steep difference survey disappears
