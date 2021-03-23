@@ -31,3 +31,5 @@ export default class extends Controller {
     });
   };
 }
+
+// TODO: Make controller async
