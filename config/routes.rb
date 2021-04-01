@@ -21,3 +21,4 @@ end
 # TODO: Make survey disappear after a period of time
 # TODO: immediate survey removal after reporting, and then need to be placed back in thru approval
 # TODO: After 100 votes if there is a steep difference survey disappears
+# TODO: Reach out to the guys of hotornot and see if you can get their advice
