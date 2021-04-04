@@ -5,7 +5,7 @@ class PagesController < ApplicationController
     @survey = RandomSurveySelector.call(@cookie)
   end
 
-  def terms_and_conditions; end
+  def terms_of_use; end
   def privacy_policy; end
   def kitchensink; end
 end
