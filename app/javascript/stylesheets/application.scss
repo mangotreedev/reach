@@ -21,5 +21,9 @@
   h4 { font-size: 1.953rem; }
   h5 { font-size: 1.563rem; }
   h6 { font-size: 1.25rem; }
-  p { font-size: 1rem; }
+  p {
+    font-size: 1rem;
+    line-height: 1.9;
+    letter-spacing: 0.1em;
+  }
 }
