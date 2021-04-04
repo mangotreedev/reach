@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     resources :choices, only: [:new, :create]
     resource :publication, only: :create
     resource :results, only: :show
-    resource :report, only: :create
+    resource :reports, only: :create
   end
 
   resources :choices, only: :destroy do

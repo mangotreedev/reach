@@ -25,6 +25,10 @@
             <p class="sub-text">Please remember when you report someone's post, Reach does not tell them who reported it.</p>
             <br>
             <p class="sub-text">Please provide us a little more context on why you are reporting this post:</p>
+            <%= simple_form_for [@survey, Report.new] do |f| %>
+              <%= f.input :reason, collection: Report.options %>
+              <%= f.button :submit %>
+            <% end %>
           </div>
 
           <div class="px-5 py-4 flex justify-end">
