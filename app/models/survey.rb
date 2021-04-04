@@ -17,6 +17,10 @@ class Survey < ApplicationRecord
     update(published: true)
   end
 
+  def unapproved!
+    update(approved: false)
+  end
+
   def total_votes
     votes.count
   end
