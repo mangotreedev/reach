@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get '/kitchensink', to: 'pages#kitchensink' if Rails.env.development?
 
   root to: 'pages#home'
+  get '/terms_of_use', to: 'pages#terms_of_use'
+  get '/privacy_policy', to: 'pages#privacy_policy'
 
   resources :surveys, only: [:new, :create, :show] do
     resources :choices, only: [:new, :create]
@@ -22,3 +24,4 @@ end
 # TODO: immediate survey removal after reporting, and then need to be placed back in thru approval
 # TODO: After 100 votes if there is a steep difference survey disappears
 # TODO: Reach out to the guys of hotornot and see if you can get their advice
+# TODO: Style using glassmorphism
