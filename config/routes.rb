@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get '/kitchensink', to: 'pages#kitchensink' if Rails.env.development?
 
   root to: 'pages#home'
+  get '/terms_and_conditions', to: 'pages#terms_and_conditions'
+  get '/privacy_policy', to: 'pages#privacy_policy'
 
   resources :surveys, only: [:new, :create, :show] do
     resources :choices, only: [:new, :create]
