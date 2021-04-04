@@ -6,4 +6,8 @@ export default class extends Controller {
   display() {
     this.popupTarget.classList.add("is-visible");
   }
+
+  hide() {
+    this.popupTarget.classList.remove("is-visible");
+  }
 }
