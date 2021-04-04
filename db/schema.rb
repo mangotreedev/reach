@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_21_031245) do
+ActiveRecord::Schema.define(version: 2021_04_04_152034) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,15 @@ ActiveRecord::Schema.define(version: 2021_03_21_031245) do
     t.index ["survey_id"], name: "index_choices_on_survey_id"
   end
 
+  create_table "reports", force: :cascade do |t|
+    t.string "reason"
+    t.bigint "survey_id", null: false
+    t.boolean "resolved", default: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["survey_id"], name: "index_reports_on_survey_id"
+  end
+
   create_table "surveys", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.boolean "approved", default: true
@@ -89,6 +98,7 @@ ActiveRecord::Schema.define(version: 2021_03_21_031245) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "choices", "surveys"
+  add_foreign_key "reports", "surveys"
   add_foreign_key "surveys", "users"
   add_foreign_key "votes", "choices"
 end
