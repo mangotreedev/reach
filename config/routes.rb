@@ -11,10 +11,11 @@ Rails.application.routes.draw do
     resources :choices, only: [:new, :create]
     resource :publication, only: :create
     resource :results, only: :show
+    resource :reports, only: :create
   end
 
   resources :choices, only: :destroy do
-    resources :votes, only: [:create]
+    resources :votes, only: :create
   end
 end
 

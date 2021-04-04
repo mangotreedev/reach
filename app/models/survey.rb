@@ -7,13 +7,18 @@ class Survey < ApplicationRecord
 
   validates :style, presence: true
 
-  scope :published, -> { where(published: true)}
+  scope :published, -> { where(published: true) }
+  scope :approved, -> { where(approved: true) }
 
   #                   0                1
   enum style: [:one_v_one_photo, :group_photo]
 
   def published!
     update(published: true)
+  end
+
+  def unapproved!
+    update(approved: false)
   end
 
   def total_votes

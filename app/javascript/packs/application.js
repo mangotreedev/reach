@@ -23,6 +23,7 @@ import "../stylesheets/application"
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import initAlerts from '../components/init_alerts';
+import "controllers";
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -30,4 +31,5 @@ document.addEventListener('turbolinks:load', () => {
   initAlerts();
 });
 
-import "controllers"
+
+
