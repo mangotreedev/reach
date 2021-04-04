@@ -10,4 +10,10 @@ export default class extends Controller {
   hide() {
     this.popupTarget.classList.remove("is-visible");
   }
+
+  overlayHide() {
+    if (event.target === this.popupTarget ) {
+      this.hide();
+    }
+  }
 }
