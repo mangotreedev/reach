@@ -3,7 +3,7 @@
 
   <div class="surveys-masonry">
     <% @user_surveys.each do |survey| %>
-    <div class="survey-tile" data-aos="fade-up" data-aos-duration="1000" data-aos-once=true>
+    <div class="survey-tile" >
       <div class="survey-tile__options-block">
         <%= link_to '<i class="fas fa-edit text-yellow-400"></i>'.html_safe, new_survey_choice_path(survey) %>
         <% if survey.published? %>

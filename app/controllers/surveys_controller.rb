@@ -3,6 +3,16 @@ class SurveysController < ApplicationController
 
   def index
     @surveys = policy_scope(Survey)
+    case params[:filter]
+    when "most"
+
+    when "least"
+
+    when "new"
+
+    when "votes"
+      @surveys = @surveys.sort_by(&:total_votes).reverse!
+    end
   end
 
   def new

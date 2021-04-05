@@ -33,3 +33,5 @@ export default class extends Controller {
 }
 
 // TODO: Make controller async
+// FIXME: Sample fixme comment
+// OPTIMIZE: Sample optimize comment

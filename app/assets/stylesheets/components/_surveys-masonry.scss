@@ -1,16 +1,12 @@
 .surveys-masonry {
-  columns: 2 400px;
-  column-gap: 1rem;
-  // display: grid;
-  // grid-template-columns: repeat(3, 1fr);
-  // // grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  // grid-gap: 1rem;
-  // grid-template-rows: masonry;
+  margin: 0 auto;
 }
 
 .survey-tile {
   margin-bottom: 1rem;
   position: relative;
+  width: 300px;
+  height: auto;
   &__options-block {
     position: absolute;
     bottom: 8px;
