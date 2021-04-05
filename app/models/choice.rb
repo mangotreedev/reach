@@ -5,4 +5,8 @@ class Choice < ApplicationRecord
   def percentage_of_vote
     votes.count.to_f / survey.total_votes
   end
+
+  def votes_count
+    votes.count
+  end
 end
