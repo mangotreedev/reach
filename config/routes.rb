@@ -17,6 +17,10 @@ Rails.application.routes.draw do
   resources :choices, only: :destroy do
     resources :votes, only: :create
   end
+
+  namespace :user do
+    resource :dashboard, only: :show
+  end
 end
 
 
