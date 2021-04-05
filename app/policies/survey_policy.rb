@@ -1,7 +1,7 @@
 class SurveyPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.all
+      scope.published.approved
     end
   end
 

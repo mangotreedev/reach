@@ -3,7 +3,7 @@
 
   <div class="surveys-masonry">
     <% @surveys.each do |survey| %>
-      <div class="survey-tile">
+      <div class="survey-tile" data-aos="fade-up" data-aos-duration="1000" data-aos-once=true>
         <%= link_to survey_path(survey) do %>
           <%= cl_image_tag survey.photo.key, crop: :fill, class: 'rounded' %>
         <% end %>
