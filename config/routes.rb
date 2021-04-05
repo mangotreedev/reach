@@ -7,11 +7,12 @@ Rails.application.routes.draw do
   get '/terms_of_use', to: 'pages#terms_of_use'
   get '/privacy_policy', to: 'pages#privacy_policy'
 
-  resources :surveys, only: [:new, :create, :show] do
+  resources :surveys, only: [:index, :new, :create, :show] do
     resources :choices, only: [:new, :create]
     resource :publication, only: :create
     resource :results, only: :show
     resource :reports, only: :create
+
   end
 
   resources :choices, only: :destroy do
