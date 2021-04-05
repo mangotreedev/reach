@@ -9,7 +9,7 @@ class SurveysController < ApplicationController
     when "least"
 
     when "new"
-
+      @surveys = @surveys.order(:created_at)
     when "votes"
       @surveys = @surveys.sort_by(&:total_votes).reverse!
     end
