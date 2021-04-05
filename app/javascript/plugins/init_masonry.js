@@ -1,13 +1,18 @@
-import Masonry from 'masonry-layout/dist/masonry.pkgd.min';
+import Masonry from 'masonry-layout';
+import imagesLoaded from 'imagesloaded';
 
 const initMasonry = () => {
-  var elem = document.querySelector(".surveys-masonry");
-  var msnry = new Masonry(elem, {
-    itemSelector: ".survey-tile",
-    columnWidth: 300,
-    fitWidth: true,
-    gutter: 16,
+  let grid = document.querySelector(".surveys-masonry");
+
+  imagesLoaded(grid, function() {
+    let msnry = new Masonry(grid, {
+      itemSelector: ".survey-tile",
+      columnWidth: 300,
+      fitWidth: true,
+      gutter: 16,
+    });
   });
 }
 
 export default initMasonry;
+// TODO: Add a loader to be cleared after all images are loaded
