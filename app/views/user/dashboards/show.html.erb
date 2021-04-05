@@ -1,1 +1,9 @@
-<h1>User Dashboard</h1>
+<div class="container mx-auto sm:w-full md:w-10/12 lg:w-3/4 p-4">
+  <h1 class="text-gray-800">User Dashboard</h1>
+
+  <div class="surveys-masonry">
+    <% @user_surveys.each do |survey| %>
+      <%= cl_image_tag survey.photo.key, crop: :fill %>
+    <% end %>
+  </div>
+</div>
