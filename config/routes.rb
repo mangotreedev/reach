@@ -17,6 +17,10 @@ Rails.application.routes.draw do
   resources :choices, only: :destroy do
     resources :votes, only: :create
   end
+
+  namespace :user do
+    resource :dashboard, only: :show
+  end
 end
 
 
@@ -26,3 +30,4 @@ end
 # TODO: After 100 votes if there is a steep difference survey disappears
 # TODO: Reach out to the guys of hotornot and see if you can get their advice
 # TODO: Style using glassmorphism
+# TODO: Add video background to about page

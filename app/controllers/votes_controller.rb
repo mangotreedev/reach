@@ -1,4 +1,6 @@
 class VotesController < ApplicationController
+  skip_before_action :authenticate_user!, only: :create
+
   def create
     choice = Choice.find(params[:choice_id])
     vote = Vote.create(choice: choice, cookie: @cookie)
