@@ -3,7 +3,15 @@
 
   <div class="surveys-masonry">
     <% @user_surveys.each do |survey| %>
-      <%= cl_image_tag survey.photo.key, crop: :fill %>
+    <div class="survey-tile">
+      <div class="survey-tile__options-block">
+        <%= link_to '<i class="fas fa-edit text-yellow-400"></i>'.html_safe, new_survey_choice_path(survey) %>
+        <%= link_to '<i class="fas fa-vote-yea text-green-500"></i>'.html_safe, survey_results_path(survey) %>
+        <%# TODO: Add a delete action with a modal are you sure? %>
+      </div>
+      <%= cl_image_tag survey.photo.key, crop: :fill, class: 'rounded' %>
+    </div>
+
     <% end %>
   </div>
 </div>
