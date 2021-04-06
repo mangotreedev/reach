@@ -32,3 +32,4 @@ end
 # TODO: Reach out to the guys of hotornot and see if you can get their advice
 # TODO: Style using glassmorphism
 # TODO: Add video background to about page
+# TODO: Set up docker and dip
