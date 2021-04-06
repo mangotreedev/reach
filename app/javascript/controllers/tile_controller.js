@@ -15,4 +15,17 @@ export default class extends Controller {
     });
     // TODO: Add sweet alert here to show photo is no longer published
   }
+
+  delete() {
+    const surveyId = parseInt(this.element.dataset.survey, 10);
+    fetchWithToken(`/surveys/${surveyId}`, {
+      method: "DELETE",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    });
+
+    console.log("And then some dom manipulation")
+  }
 }

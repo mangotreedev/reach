@@ -12,4 +12,8 @@ class SurveyPolicy < ApplicationPolicy
   def show?
     record.published?
   end
+
+  def destroy?
+    record.user == user
+  end
 end

@@ -36,8 +36,11 @@ class SurveysController < ApplicationController
     authorize @survey
   end
 
-  def results
-
+  def destroy
+    @survey = Survey.find(params[:id])
+    authorize @survey
+    @survey.destroy!
+    head :no_content
   end
 
   private
