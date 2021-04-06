@@ -15,7 +15,6 @@
         <%= link_to survey_path(survey) do %>
           <%= cl_image_tag survey.photo.key, crop: :fill, class: 'rounded' %>
         <% end %>
-        Total Votes: <%= survey.total_votes %>
       </div>
     <% end %>
   </div>
