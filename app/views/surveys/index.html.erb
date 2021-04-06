@@ -6,6 +6,8 @@
     <%= link_to "Least Contreversial", surveys_path(filter: "least"), class: "mr-4"%>
     <%= link_to "New", surveys_path(filter: "new"), class: "mr-4"%>
     <%= link_to "Most Votes", surveys_path(filter: "votes"), class: "mr-4"%>
+    <%# TODO: Have cute icons for these %>
+    <%# TODO: Fix blinking issues %>
   </div>
   <div class="surveys-masonry">
     <% @surveys.each do |survey| %>
