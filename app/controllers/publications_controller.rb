@@ -1,7 +1,7 @@
 class PublicationsController < ApplicationController
+  before_action :set_and_authorize_publication
+
   def create
-    @survey = Survey.find(params[:survey_id])
-    authorize @survey, policy_class: PublicationPolicy
     if @survey.choices.any?
       @survey.published!
       redirect_to @survey
@@ -12,10 +12,14 @@ class PublicationsController < ApplicationController
   end
 
   def destroy
-    @survey = Survey.find(params[:survey_id])
-    authorize @survey, policy_class: PublicationPolicy
-
     @survey.update(published: false);
     render json: { head: :no_content }
+  end
+
+  private
+
+  def set_and_authorize_publication
+    @survey = Survey.find(params[:survey_id])
+    authorize @survey, policy_class: PublicationPolicy
   end
 end
