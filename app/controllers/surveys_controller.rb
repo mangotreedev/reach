@@ -1,5 +1,19 @@
 class SurveysController < ApplicationController
-  skip_before_action :authenticate_user!, only: :show
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
+  def index
+    @surveys = policy_scope(Survey)
+    case params[:filter]
+    when "most"
+      @surveys = @surveys.sort_by(&:controversy).first(20)
+    when "least"
+      @surveys = @surveys.sort_by(&:controversy).reverse!.first(20)
+    when "new"
+      @surveys = @surveys.order(:created_at)
+    when "votes"
+      @surveys = @surveys.sort_by(&:total_votes).reverse!
+    end
+  end
 
   def new
     @survey = Survey.new

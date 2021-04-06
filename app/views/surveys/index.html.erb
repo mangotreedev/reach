@@ -1,0 +1,21 @@
+<div class="container mx-auto sm:w-full md:w-10/12 lg:w-3/4 p-4">
+  <h1 class="text-gray-800">Gallery View</h1>
+  <div class="tabs">
+    <%= link_to "All", surveys_path, class: "mr-4"%>
+    <%= link_to "Most Contreversial", surveys_path(filter: "most"), class: "mr-4"%>
+    <%= link_to "Least Contreversial", surveys_path(filter: "least"), class: "mr-4"%>
+    <%= link_to "New", surveys_path(filter: "new"), class: "mr-4"%>
+    <%= link_to "Most Votes", surveys_path(filter: "votes"), class: "mr-4"%>
+    <%# TODO: Have cute icons for these %>
+    <%# TODO: Fix blinking issues %>
+  </div>
+  <div class="surveys-masonry">
+    <% @surveys.each do |survey| %>
+      <div class="survey-tile">
+        <%= link_to survey_path(survey) do %>
+          <%= cl_image_tag survey.photo.key, crop: :fill, class: 'rounded' %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

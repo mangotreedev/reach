@@ -22,13 +22,17 @@ import "../stylesheets/application"
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-import initAlerts from '../components/init_alerts';
 import "controllers";
+import initAlerts from '../components/init_alerts';
+import initAos from "../plugins/init_aos"
+import initMasonry from "../plugins/init_masonry"
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initAlerts();
+  initAos();
+  initMasonry();
 });
 
 
