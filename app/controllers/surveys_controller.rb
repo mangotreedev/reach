@@ -5,9 +5,9 @@ class SurveysController < ApplicationController
     @surveys = policy_scope(Survey)
     case params[:filter]
     when "most"
-      @surveys = @surveys.sort_by(&:controversy)
+      @surveys = @surveys.sort_by(&:controversy).first(20)
     when "least"
-      @surveys = @surveys.sort_by(&:controversy).reverse!
+      @surveys = @surveys.sort_by(&:controversy).reverse!.first(20)
     when "new"
       @surveys = @surveys.order(:created_at)
     when "votes"
