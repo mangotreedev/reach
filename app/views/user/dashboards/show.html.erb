@@ -43,7 +43,7 @@
         </div>
         <div class="survey-tile__options-block">
           <%= link_to '<i class="fas fa-edit text-yellow-400"></i>'.html_safe, new_survey_choice_path(survey) %>
-          <% if survey.published? %>
+          <% if survey.total_votes > 0 %>
             <%= link_to '<i class="fas fa-vote-yea text-green-500"></i>'.html_safe, survey_results_path(survey) %>
           <% end %>
           <%# TODO: Add a delete action with a modal are you sure? %>
@@ -53,3 +53,5 @@
     <% end %>
   </div>
 </div>
+<%# TODO: Add some sort of icon to show the photo is live %>
+<%# TODO: Add total vote count inside of badge that shows whether it's live or not %>

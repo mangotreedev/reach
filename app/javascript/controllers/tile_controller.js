@@ -13,5 +13,6 @@ export default class extends Controller {
         "Content-Type": "application/json",
       },
     });
+    // TODO: Add sweet alert here to show photo is no longer published
   }
 }
