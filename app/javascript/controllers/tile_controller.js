@@ -26,6 +26,7 @@ export default class extends Controller {
       },
     });
 
-    console.log("And then some dom manipulation")
+    this.element.remove();
+    // TODO: Add sweet alert here to show photo has been deleted
   }
 }
