@@ -10,4 +10,8 @@ class PublicationsController < ApplicationController
       redirect_to new_survey_choice_path(@survey)
     end
   end
+
+  def destroy
+    binding.pry
+  end
 end

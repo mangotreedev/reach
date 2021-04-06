@@ -2,7 +2,7 @@
   <h1 class="text-gray-800">User Dashboard</h1>
   <div class="surveys-masonry">
     <% @user_surveys.each do |survey| %>
-      <div class="survey-tile" >
+      <div class="survey-tile" data-controller="tile" data-survey=<%= survey.id %>>
         <div class="survey-tile__removal-block">
           <div data-controller="modal">
             <button type="button" class="" data-action='click->modal#display'>
@@ -26,14 +26,14 @@
                   <button type="button" class="my-4 py-2 text-red-500
                       rounded border border-red-500 inline-block
                       hover:bg-red-400 hover:border-red-400 hover:text-white focus:outline-none
-                      transition duration-300 w-full">
+                      transition duration-300 w-full" data-action='click->modal#hide click->tile#unpublish'>
                     Remove Photo from Circulation
                   </button>
                   <p class="sub-text">If you're sure about deleting the photo, please click below:</p>
                   <button type="button" class="my-4 py-2 bg-red-500 text-white
                       rounded border border-red-500 inline-block
                       hover:bg-red-400 hover:border-red-400 focus:outline-none
-                      transition duration-300 w-full">
+                      transition duration-300 w-full" data-action='click->modal#hide click->tile#unpublish'>
                     Delete Photo
                   </button>
                 </div>
