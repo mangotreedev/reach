@@ -6,7 +6,7 @@ class PublicationsController < ApplicationController
       @survey.published!
       redirect_to @survey
     else
-      flash[:info] = "You must provide choices before publishing"
+      flash[:sweetalert] = "You must provide choices before publishing"
       redirect_to new_survey_choice_path(@survey)
     end
   end
