@@ -1,6 +1,6 @@
 class PublicationPolicy < ApplicationPolicy
   def create?
-    record.user == user
+    record.user == user || user.admin?
   end
 
   def destroy?
