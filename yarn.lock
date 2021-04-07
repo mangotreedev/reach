@@ -7319,6 +7319,11 @@ svgo@^1.0.0:
     unquote "~1.1.1"
     util.promisify "~1.0.0"
 
+sweetalert2@^10.16.0:
+  version "10.16.0"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-10.16.0.tgz#33d527af90689baab1078bf447b1986b796d4c75"
+  integrity sha512-qJp4nIpx0MPDnAdY6MurwH/mAovfCzWo07hFoQ41C46XGLpNkxiqBbJDNdhGfMFwbDY1e9jfttNFxe5IsrkEtA==
+
 tailwindcss@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-2.0.3.tgz#f8d07797d1f89dc4b171673c26237b58783c2c86"

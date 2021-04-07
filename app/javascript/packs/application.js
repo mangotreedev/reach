@@ -26,6 +26,7 @@ import "controllers";
 import initAlerts from '../components/init_alerts';
 import initAos from "../plugins/init_aos"
 import initMasonry from "../plugins/init_masonry"
+import { fireSweetAlert } from "../utils/fire_sweet_alert"
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -33,6 +34,7 @@ document.addEventListener('turbolinks:load', () => {
   initAlerts();
   initAos();
   initMasonry();
+  fireSweetAlert();
 });
 
 

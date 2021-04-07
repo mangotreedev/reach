@@ -1,5 +1,6 @@
 import { Controller } from "stimulus";
 import { fetchWithToken } from "../utils/fetch_with_token";
+import { Toast } from "../utils/toast_mixin";
 
 export default class extends Controller {
   static targets = ["popup"];
@@ -35,6 +36,11 @@ export default class extends Controller {
     document.querySelector(`[data-survey='${surveyId}']`).remove();
 
     this.hide();
+
+    Toast.fire({
+      icon: "error",
+      title: "Photo permanently deleted",
+    });
   }
 
   overlayHide() {

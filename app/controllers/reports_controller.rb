@@ -7,7 +7,7 @@ class ReportsController < ApplicationController
     survey.unapproved!
     authorize report
 
-    flash[:info] = "Thank you for your report, our team is investigating now."
+    flash[:sweetalert] = "Thank you for your report, our team is investigating now."
     redirect_to root_path
   end
 
