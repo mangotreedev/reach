@@ -37,9 +37,10 @@ class Survey < ApplicationRecord
     # Controversy is calculated based off two factors; vote count threshold and vote standard deviation
 
     # Comment this back in when you have a sizable amount of surveys and votes
-    # return 0 if votes.count < 20
+    return 0 if votes.count < 3
     variance = vote_counts.reduce(0) { |variance, x| variance += (x - mean) ** 2 }
     sigma = Math.sqrt(variance/(vote_counts.size-1))
+
   end
 
   private
