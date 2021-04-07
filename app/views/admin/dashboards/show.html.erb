@@ -3,7 +3,7 @@
   <div class="surveys-masonry">
     <% @reported_surveys.each do |survey| %>
       <div class="survey-tile" data-controller="tile" data-survey=<%= survey.id %>>
-        <div class="survey-tile__removal-block">
+        <div class="survey-tile__options-block">
           <div data-controller="modal">
             <button type="button" class="" data-action='click->modal#display'>
               <i class="fas fa-times text-red-600"></i>
@@ -39,17 +39,14 @@
                 </div>
               </div>
             </div>
+            <button type="button" class="" data-action='click->tile#publish'>
+              <i class="fas fa-check text-green-500"></i>
+            </button>
+
           </div>
-        </div>
-        <div class="survey-tile__options-block">
-          <%= link_to '<i class="fas fa-edit text-yellow-400"></i>'.html_safe, new_survey_choice_path(survey) %>
-          <% if survey.total_votes > 0 %>
-            <%= link_to '<i class="fas fa-vote-yea text-green-500"></i>'.html_safe, survey_results_path(survey) %>
-          <% end %>
         </div>
         <%= cl_image_tag survey.photo.key, crop: :fill, class: 'rounded' %>
       </div>
     <% end %>
   </div>
 </div>
-

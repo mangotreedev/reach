@@ -13,7 +13,7 @@ class PublicationsController < ApplicationController
 
   def destroy
     @survey.update(published: false);
-    head :no_content
+    render json: { head: :no_content }
   end
 
   private

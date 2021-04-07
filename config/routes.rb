@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :surveys, only: [:index, :new, :create, :show, :destroy] do
     resources :choices, only: [:new, :create]
     resource :publication, only: [ :create, :destroy ]
+    resource :approval, only: :create
     resource :results, only: :show
     resource :reports, only: :create
   end
