@@ -1,4 +1,5 @@
 import { Controller } from "stimulus";
+import { Toast } from "../utils/toast_mixin";
 
 export default class extends Controller {
 
@@ -28,8 +29,10 @@ export default class extends Controller {
     document.execCommand("copy");
 
     document.body.removeChild(textTemp);
+
+    Toast.fire({
+      icon: "success",
+      title: "URL copied to clipboard",
+    });
   }
-
-
-
 }
