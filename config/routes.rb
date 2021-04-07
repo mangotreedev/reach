@@ -38,3 +38,4 @@ end
 # TODO: Add video background to about page
 # TODO: Set up docker and dip
 # TODO: Add blazer
+# TODO: Add google tag manager to analyze
