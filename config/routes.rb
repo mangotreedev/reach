@@ -37,3 +37,4 @@ end
 # TODO: Style using glassmorphism
 # TODO: Add video background to about page
 # TODO: Set up docker and dip
+# TODO: Add blazer
