@@ -19,4 +19,12 @@
       margin-left: 0.25rem;
     }
   }
+  &__removal-block {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    i {
+      font-size: 1.5rem;
+    }
+  }
 }

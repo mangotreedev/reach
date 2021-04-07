@@ -15,7 +15,7 @@ export default class extends Controller {
 
   addChoice() {
     const data = this.cropper.getData({rounded: true});
-    console.log(data);
+
     fetchWithToken(`/surveys/${this.data.get("survey-id")}/choices`, {
       method: "POST",
       headers: {
