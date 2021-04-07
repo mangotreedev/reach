@@ -12,7 +12,6 @@ Rails.application.routes.draw do
     resource :publication, only: [ :create, :destroy ]
     resource :results, only: :show
     resource :reports, only: :create
-
   end
 
   resources :choices, only: :destroy do
@@ -20,6 +19,10 @@ Rails.application.routes.draw do
   end
 
   namespace :user do
+    resource :dashboard, only: :show
+  end
+
+  namespace :admin do
     resource :dashboard, only: :show
   end
 end
