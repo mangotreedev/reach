@@ -17,6 +17,14 @@ class Survey < ApplicationRecord
     update(published: true)
   end
 
+  def unpublished!
+    update(published: false)
+  end
+
+  def approved!
+    update(approved: true)
+  end
+
   def unapproved!
     update(approved: false)
   end
