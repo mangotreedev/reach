@@ -32,14 +32,7 @@
         </div>
       </div>
     </div>
-    <div data-controller="clipboard">
-      <button type="button" class="px-12 py-3 bg-blue-500 text-white
-            rounded border border-blue-500 inline-block
-            hover:bg-blue-400 hover:border-blue-400 focus:outline-none
-            transition duration-300 w-full" data-action='click->clipboard#copy' data-url="<%= survey_url(survey) %>">
-        Share Link <i class="far fa-clipboard"></i>
-      </button>
-    </div>
+    <%= render 'shared/share_btn', survey: survey %>
   </div>
   <div class="survey__choices">
     <h1 class="">The Choices</h1>
