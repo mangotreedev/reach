@@ -10,9 +10,9 @@ Rails.application.routes.draw do
   resources :surveys, only: [:index, :new, :create, :show, :destroy] do
     resources :choices, only: [:new, :create]
     resource :publication, only: [ :create, :destroy ]
+    resource :approval, only: :create
     resource :results, only: :show
     resource :reports, only: :create
-
   end
 
   resources :choices, only: :destroy do
@@ -20,6 +20,10 @@ Rails.application.routes.draw do
   end
 
   namespace :user do
+    resource :dashboard, only: :show
+  end
+
+  namespace :admin do
     resource :dashboard, only: :show
   end
 end
@@ -33,3 +37,4 @@ end
 # TODO: Style using glassmorphism
 # TODO: Add video background to about page
 # TODO: Set up docker and dip
+# TODO: Add blazer
