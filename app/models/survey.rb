@@ -2,6 +2,7 @@ class Survey < ApplicationRecord
   belongs_to :user
   has_many :choices, dependent: :destroy
   has_many :votes, through: :choices
+  has_many :reports, dependent: :destroy
 
   has_one_attached :photo
 
