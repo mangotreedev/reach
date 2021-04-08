@@ -8,6 +8,7 @@
   width: 300px;
   height: auto;
   &__options-block {
+    z-index: 5;
     position: absolute;
     bottom: 8px;
     right: 12px;
@@ -20,6 +21,7 @@
     }
   }
   &__removal-block {
+    z-index: 5;
     position: absolute;
     top: 8px;
     right: 12px;
@@ -28,6 +30,7 @@
     }
   }
   &__status-block {
+    z-index: 5;
     position: absolute;
     top: 8px;
     left: 12px;
