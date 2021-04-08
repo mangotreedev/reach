@@ -10,6 +10,9 @@ const initTippy = () => {
   tippy(".results-btn", {
     content: "View Results",
   });
+  tippy(".approve-btn", {
+    content: "Approve Photo",
+  });
 }
 
 export default initTippy;

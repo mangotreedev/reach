@@ -29,11 +29,11 @@
       <% @reported_surveys.each do |survey| %>
         <div class="survey-tile" data-controller="tile" data-survey=<%= survey.id %>>
           <div class="survey-tile__options-block">
-            <button type="button" class="" data-action='click->dynamic-modal#display'>
+            <button type="button" class="delete-btn" data-action='click->dynamic-modal#display'>
               <i class="fas fa-times text-red-600"></i>
             </button>
             <div data-controller="modal">
-              <button type="button" class="" data-action='click->modal#display'>
+              <button type="button" class="approve-btn" data-action='click->modal#display'>
                 <i class="fas fa-check text-green-500"></i>
               </button>
               <div class="modal" data-modal-target="popup" data-action='click->modal#overlayHide'>
