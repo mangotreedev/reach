@@ -36,5 +36,4 @@ end
 # TODO: Positive uplifting lingo for who is the reacher
 # TODO: Add video background to about page
 # TODO: Style using glassmorphism
-# TODO: Add blazer
 
