@@ -57,9 +57,9 @@
           </div>
         </div>
         <div class="survey-tile__options-block">
-          <%= link_to '<i class="fas fa-edit text-yellow-400"></i>'.html_safe, new_survey_choice_path(survey) %>
+          <%= link_to '<i class="fas fa-edit text-yellow-400"></i>'.html_safe, new_survey_choice_path(survey), class: "edit-btn" %>
           <% if survey.total_votes > 0 %>
-            <%= link_to '<i class="fas fa-vote-yea text-green-500"></i>'.html_safe, survey_results_path(survey) %>
+            <%= link_to '<i class="fas fa-vote-yea text-green-500"></i>'.html_safe, survey_results_path(survey), class: "results-btn" %>
           <% end %>
         </div>
         <div class="img-gradient">
