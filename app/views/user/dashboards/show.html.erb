@@ -3,6 +3,21 @@
   <div class="surveys-masonry">
     <% @user_surveys.each do |survey| %>
       <div class="survey-tile" data-controller="tile" data-survey=<%= survey.id %>>
+        <div class="survey-tile__status-block">
+          <% if !survey.approved? %>
+            <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-red-600 bg-red-200 uppercase last:mr-0 mr-1">
+              FLAGGED
+            </span>
+          <% elsif !survey.published? %>
+            <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-yellow-600 bg-yellow-200 uppercase last:mr-0 mr-1">
+              NOT PUBLISHED
+            </span>
+          <% else %>
+            <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-green-600 bg-green-200 uppercase last:mr-0 mr-1">
+              LIVE: <%= pluralize(survey.total_votes, 'vote') %>
+            </span>
+          <% end %>
+        </div>
         <div class="survey-tile__removal-block">
           <div data-controller="modal">
             <button type="button" class="" data-action='click->modal#display'>
