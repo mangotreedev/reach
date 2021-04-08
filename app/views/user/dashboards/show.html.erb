@@ -2,7 +2,7 @@
   <h1 class="text-gray-800">User Dashboard</h1>
   <div class="surveys-masonry">
     <% @user_surveys.each do |survey| %>
-      <div class="survey-tile" data-controller="tile" data-survey=<%= survey.id %>>
+      <div class="survey-tile rounded" data-controller="tile" data-survey=<%= survey.id %>>
         <div class="survey-tile__status-block">
           <% if !survey.approved? %>
             <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-red-600 bg-red-200 uppercase last:mr-0 mr-1">
@@ -20,7 +20,7 @@
         </div>
         <div class="survey-tile__removal-block">
           <div data-controller="modal">
-            <button type="button" class="" data-action='click->modal#display'>
+            <button type="button" class="delete-btn" data-action='click->modal#display'>
               <i class="fas fa-times text-red-600"></i>
             </button>
             <div class="modal" data-modal-target="popup" data-action='click->modal#overlayHide'>
@@ -62,7 +62,9 @@
             <%= link_to '<i class="fas fa-vote-yea text-green-500"></i>'.html_safe, survey_results_path(survey) %>
           <% end %>
         </div>
-        <%= cl_image_tag survey.photo.key, crop: :fill, class: 'rounded' %>
+        <div class="img-gradient">
+          <%= cl_image_tag survey.photo.key, crop: :fill, class: "rounded" %>
+        </div>
       </div>
     <% end %>
   </div>
