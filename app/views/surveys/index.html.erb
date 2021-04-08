@@ -14,7 +14,7 @@
     <% @surveys.each do |survey| %>
       <div class="survey-tile">
         <%= link_to survey_path(survey) do %>
-          <%= cl_image_tag survey.photo.key, crop: :fill, class: 'rounded' %>
+          <%= cl_image_tag survey.photo.key, crop: :fill, class: 'rounded', format: :jpg %>
         <% end %>
       </div>
     <% end %>

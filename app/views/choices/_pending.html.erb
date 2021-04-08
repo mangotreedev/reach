@@ -1,5 +1,5 @@
 <div class="choice flex p-2 justify-between items-center border-4 border-yellow-500 border-opacity-50 rounded m-4">
-  <%= cl_image_tag @survey.photo.key, x: choice.x, y: choice.y, width: choice.width, height: choice.height, crop: :crop, class: 'w-16 h-20 rounded object-cover' %>
+  <%= cl_image_tag @survey.photo.key, x: choice.x, y: choice.y, width: choice.width, height: choice.height, crop: :crop, class: 'w-16 h-20 rounded object-cover', format: :jpg %>
   <p class="text-red-600">Delete Choice<%= link_to "<i class='fas fa-dumpster-fire'></i>".html_safe,
           choice_path(choice),
           method: :delete,
