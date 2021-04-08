@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/kitchensink', to: 'pages#kitchensink' if Rails.env.development?
 
   root to: 'pages#home'
+  get '/about', to: 'pages#about'
   get '/terms_of_use', to: 'pages#terms_of_use'
   get '/privacy_policy', to: 'pages#privacy_policy'
 
