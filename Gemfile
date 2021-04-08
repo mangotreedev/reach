@@ -39,6 +39,10 @@ gem 'cloudinary'
 
 gem 'rexml'
 
+gem 'blazer'
+
+gem 'active_storage_validations'
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'

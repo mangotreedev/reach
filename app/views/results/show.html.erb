@@ -2,7 +2,7 @@
 <div class="flex survey">
   <div class="survey__photo">
     <h1 class="text-6xl font-bold">Who's the reacher</h1>
-    <%= cl_image_tag @survey.photo.key, height: 500, width: 700, crop: :fill%>
+    <%= cl_image_tag @survey.photo.key, height: 500, width: 700, crop: :fill, format: :jpg %>
     <%= render 'shared/share_btn', survey: @survey  %>
   </div>
 

@@ -1,5 +1,5 @@
 
 <div class="choice flex py-3 px-6 justify-between items-center border-4 border-yellow-500 border-opacity-50 rounded m-4">
-  <%= cl_image_tag @survey.photo.key, x: choice.x, y: choice.y, width: choice.width, height: choice.height, crop: :crop, class: 'w-16 h-20 rounded object-cover' %>
+  <%= cl_image_tag @survey.photo.key, x: choice.x, y: choice.y, width: choice.width, height: choice.height, crop: :crop, class: 'w-16 h-20 rounded object-cover', format: :jpg %>
   <p class="text-yellow-500"><%= (choice.percentage_of_vote * 100).round(2) %>% Reacher</p>
 </div>

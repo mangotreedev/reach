@@ -2,12 +2,37 @@
   <h1 class="text-gray-800">User Dashboard</h1>
   <div class="surveys-masonry">
     <% @user_surveys.each do |survey| %>
-      <div class="survey-tile" data-controller="tile" data-survey=<%= survey.id %>>
+      <div class="survey-tile rounded" data-controller="tile" data-survey=<%= survey.id %>>
+      <div data-controller="modal">
+        <div class="survey-tile__status-block">
+          <% if !survey.approved? %>
+            <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-red-600 bg-red-200 uppercase last:mr-0 mr-1">
+              FLAGGED
+            </span>
+          <% elsif !survey.published? %>
+            <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-yellow-600 bg-yellow-200 uppercase last:mr-0 mr-1">
+              NOT PUBLISHED
+            </span>
+          <% else %>
+            <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-green-600 bg-green-200 uppercase last:mr-0 mr-1">
+              LIVE: <%= pluralize(survey.total_votes, 'vote') %>
+            </span>
+          <% end %>
+        </div>
         <div class="survey-tile__removal-block">
-          <div data-controller="modal">
-            <button type="button" class="" data-action='click->modal#display'>
+            <button type="button" class="delete-btn" data-action='click->modal#display'>
               <i class="fas fa-times text-red-600"></i>
             </button>
+        </div>
+        <div class="survey-tile__options-block">
+          <%= link_to '<i class="fas fa-edit text-yellow-400"></i>'.html_safe, new_survey_choice_path(survey), class: "edit-btn" %>
+          <% if survey.total_votes > 0 %>
+            <%= link_to '<i class="fas fa-vote-yea text-green-500"></i>'.html_safe, survey_results_path(survey), class: "results-btn" %>
+          <% end %>
+        </div>
+        <div class="img-gradient">
+          <%= cl_image_tag survey.photo.key, crop: :fill, class: "rounded", format: :jpg %>
+        </div>
             <div class="modal" data-modal-target="popup" data-action='click->modal#overlayHide'>
               <div class="md:w-1/3 sm:w-full rounded-lg shadow-lg bg-white my-3">
                 <div class="flex justify-between border-b border-gray-100 px-5 py-4">
@@ -40,19 +65,8 @@
               </div>
             </div>
           </div>
-        </div>
-        <div class="survey-tile__options-block">
-          <%= link_to '<i class="fas fa-edit text-yellow-400"></i>'.html_safe, new_survey_choice_path(survey) %>
-          <% if survey.total_votes > 0 %>
-            <%= link_to '<i class="fas fa-vote-yea text-green-500"></i>'.html_safe, survey_results_path(survey) %>
-          <% end %>
-          <%# TODO: Add a delete action with a modal are you sure? %>
-        </div>
-        <%= cl_image_tag survey.photo.key, crop: :fill, class: 'rounded' %>
       </div>
     <% end %>
   </div>
 </div>
-<%# TODO: Add some sort of icon to show the photo is live %>
-<%# TODO: Add total vote count inside of badge that shows whether it's live or not %>
-<%# OPTIMIZE: Optimize to make they modal dynamic %>
+

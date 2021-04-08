@@ -6,6 +6,8 @@ class Survey < ApplicationRecord
 
   has_one_attached :photo
 
+  validates :photo, attached: true
+
   validates :style, presence: true
 
   scope :published, -> { where(published: true) }

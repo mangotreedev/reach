@@ -15,4 +15,3 @@ const initMasonry = () => {
 }
 
 export default initMasonry;
-// TODO: Add a loader to be cleared after all images are loaded

@@ -1,7 +1,7 @@
 <div class="flex survey">
   <div class="survey__photo">
     <h1 class="">Who's the reacher</h1>
-    <%= cl_image_tag survey.photo.key, height: 500, width: 700, crop: :limit%>
+    <%= cl_image_tag survey.photo.key, height: 500, width: 700, crop: :limit, format: :jpg %>
     <div data-controller="modal">
       <button type="button" class="px-12 py-3 bg-red-500 text-white
           rounded border border-red-500 inline-block

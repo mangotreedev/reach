@@ -16,6 +16,7 @@
     "stimulus": "^2.0.0",
     "sweetalert2": "^10.16.0",
     "tailwindcss": "^2.0.3",
+    "tippy.js": "^6.3.1",
     "turbolinks": "^5.2.0"
   },
   "version": "0.1.0",
