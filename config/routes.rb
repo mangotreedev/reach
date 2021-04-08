@@ -26,6 +26,10 @@ Rails.application.routes.draw do
   namespace :admin do
     resource :dashboard, only: :show
   end
+
+  authenticate :user, ->(user) { user.admin? } do
+    mount Blazer::Engine, at: "blazer"
+  end
 end
 
 
