@@ -9,7 +9,9 @@
     <%# TODO: Have cute icons for these %>
     <%# TODO: Fix blinking issues %>
   </div>
+  <%# <div class="loadingbar"></#div> %>
   <div class="surveys-masonry">
+
     <% @surveys.each do |survey| %>
       <div class="survey-tile">
         <%= link_to survey_path(survey) do %>
