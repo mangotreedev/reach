@@ -1,0 +1,16 @@
+.btn {
+  padding: 1rem 3rem;
+  display: inline-block;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 1.5rem;
+  text-align: center;
+  &-gradient {
+    background: var(--btn-gradient);
+    color: white;
+    transition: 0.5s;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}

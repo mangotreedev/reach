@@ -3,17 +3,10 @@
     <source src="<%= video_path("bideo_one.mp4") %>" type="video/mp4">
   </video>
   <div class="banner__content w-1/2">
-    <h1 class="text-red-400">Reacher</h1>
-    <h3>Every good relationship or group has someone who outkicks their coverage.</h3>
-    <br>
-    <h3>Did you?</h3>
-
-      <button type="button" class="px-12 py-3 bg-red-500 text-white
-          rounded border border-red-500 inline-block
-          hover:bg-red-400 hover:border-red-400 focus:outline-none
-          transition duration-300 w-full" data-action='click->modal#display'>
-        Report Photo
-      </button>
+    <h1 class="text-gradient">Reacher</h1>
+    <h4 class="text-white mb-4">Every relationship has a reacher and a settler.</h4>
+    <h4 class="text-white">...which one are you?</h4>
+    <%= link_to "Find Out", root_path, class: "btn btn-gradient focus:outline-none w-full mt-8" %>
   </div>
 </div>
 
