@@ -6,13 +6,13 @@
   img {
     position: absolute;
     z-index: 1;
+    border: white solid 24px;
   }
   &__photo-two {
     width: 560px;
     transform: rotate(-15deg);
     bottom: 20%;
     right: 50%;
-    border-radius: 8px;
   }
   &__content {
     z-index: 2;
