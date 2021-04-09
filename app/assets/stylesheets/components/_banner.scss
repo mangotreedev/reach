@@ -1,0 +1,25 @@
+.banner {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  h3 {
+    color: white;
+  }
+  &__video {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+  }
+  &__content {
+    z-index: 2;
+    padding: 3rem 2rem;
+    background: rgba( 255, 255, 255, 0.20 );
+    box-shadow: 0 8px 48px 0 rgba( 255, 255, 255, 0.25 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    //border: 1px solid rgba( 255, 255, 255, 0.2 );
+  }
+}

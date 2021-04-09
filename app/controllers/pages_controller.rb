@@ -7,5 +7,6 @@ class PagesController < ApplicationController
 
   def terms_of_use; end
   def privacy_policy; end
+  def about; end
   def kitchensink; end
 end
