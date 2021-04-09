@@ -1,0 +1,40 @@
+.about {
+  width: 100vw;
+  height: 120vh;
+  position: relative;
+  text-align: center;
+  img {
+    position: absolute;
+    z-index: 1;
+  }
+  &__photo-two {
+    width: 560px;
+    transform: rotate(-15deg);
+    bottom: 20%;
+    right: 50%;
+    border-radius: 8px;
+  }
+  &__content {
+    z-index: 2;
+    padding: 3rem;
+    background: rgba( 255, 255, 255, 0.20 );
+    box-shadow: 0 8px 32px 0 rgba( 255, 255, 255, 0.2 );
+    backdrop-filter: blur( 6.0px );
+    -webkit-backdrop-filter: blur( 6.0px );
+    border-radius: 8px;
+  }
+  .gradient-triangle {
+    position: absolute;
+    z-index: 1;
+    bottom: -2%;
+    right: -3%;
+    transform: rotate(10deg);
+  }
+  .gradient-squiggles {
+    position: absolute;
+    z-index: 3;
+    top: 20%;
+    right: 5%;
+    transform: rotate(60deg);
+  }
+}

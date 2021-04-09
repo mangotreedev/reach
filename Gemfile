@@ -43,6 +43,8 @@ gem 'blazer'
 
 gem 'active_storage_validations'
 
+gem 'inline_svg'
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
