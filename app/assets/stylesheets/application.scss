@@ -6,6 +6,11 @@
 @import 'tippy.js/dist/tippy.css';
 
 // Your CSS partials
+@import "util/index";
 @import "components/index";
 @import "pages/index";
-@import "util/index"
+
+body {
+  background: linear-gradient(135deg, rgba(0,78,154,0.4) 0%, rgba(66,140,212,0.4) 100%);
+  //background: radial-gradient(circle, rgba(66,140,212,0.4) 0%, rgba(0,78,154,0.4) 100%);
+}

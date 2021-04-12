@@ -1,3 +1,12 @@
+:root {
+  --text-gradient: linear-gradient(135deg, rgba(0,78,154,1) 0%, rgba(66,140,212,1) 100%);
+  --btn-gradient: linear-gradient(135deg, rgba(66,140,212,1) 0%, rgba(255,156,218,1) 100%);
+  --dark-blue: #004e9a;
+  --light-blue: #428cd4;
+  --dark-pink: #ff9cda;
+  --light-pink: #ffe0f4;
+}
+
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";

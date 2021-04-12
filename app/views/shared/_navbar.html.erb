@@ -13,6 +13,9 @@
     <li class="border-t md:border-none">
       <%= link_to "Gallery", surveys_path, class: "block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker"  %>
     </li>
+    <li class="border-t md:border-none">
+      <%= link_to "About", about_path, class: "block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker"  %>
+    </li>
     <% if user_signed_in? %>
       <li class="border-t md:border-none">
         <%= link_to "Add a Photo", new_survey_path, class: "block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker"  %>

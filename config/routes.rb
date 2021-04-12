@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/kitchensink', to: 'pages#kitchensink' if Rails.env.development?
 
   root to: 'pages#home'
+  get '/about', to: 'pages#about'
   get '/terms_of_use', to: 'pages#terms_of_use'
   get '/privacy_policy', to: 'pages#privacy_policy'
 
@@ -31,9 +32,4 @@ Rails.application.routes.draw do
     mount Blazer::Engine, at: "blazer"
   end
 end
-
-
-# TODO: Positive uplifting lingo for who is the reacher
-# TODO: Add video background to about page
-# TODO: Style using glassmorphism
 

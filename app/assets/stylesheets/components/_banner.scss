@@ -1,0 +1,21 @@
+.banner {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  &__video {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+  }
+  &__content {
+    z-index: 2;
+    padding: 2rem;
+    background: rgba( 255, 224, 244, 0.35 );
+    box-shadow: 0 8px 48px 0 rgba( 255, 224, 244, 0.35 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 8px;
+  }
+}
