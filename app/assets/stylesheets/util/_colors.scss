@@ -21,3 +21,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.bg-gradient--blue {
+  background: linear-gradient(135deg, rgba(0,78,154,0.1) 0%, rgba(66,140,212,0.4) 100%);
+}
