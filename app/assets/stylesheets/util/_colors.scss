@@ -15,8 +15,8 @@
   linear,
   left top,
   right top,
-  color-stop(0.01, var(--pink)),
-  color-stop(0.76, var(--dark-pink))
+  color-stop(0.01, var(--dark-pink)),
+  color-stop(0.76, var(--pink))
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
