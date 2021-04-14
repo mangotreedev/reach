@@ -18,7 +18,8 @@ const initNavbarScroll = () => {
     }
 
     const navbarCheck = () => {
-      if (window.scrollY >= window.innerHeight) {
+      const banner = document.querySelector('.banner')
+      if (window.scrollY >= banner.clientHeight) {
         navbar.classList.add("bg-white");
       } else {
         navbar.classList.remove("bg-white");
