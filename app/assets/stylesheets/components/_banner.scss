@@ -1,6 +1,6 @@
 .banner {
   width: 100vw;
-  height: 100vh;
+  height: 57vw;
   position: relative;
   &__video {
     position: absolute;
@@ -8,6 +8,7 @@
     bottom: 0;
     min-width: 100%;
     min-height: 100%;
+    object-fit: cover;
   }
   &__content {
     z-index: 2;

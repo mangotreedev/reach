@@ -13,6 +13,15 @@ const initTippy = () => {
   tippy(".approve-btn", {
     content: "Approve Photo",
   });
+  tippy(".donation-btn", {
+    content: "Love it? Support us with pizza!",
+  });
+  tippy(".contribute-btn", {
+    content: "Hate it? Make it better!",
+  });
+  tippy(".issue-btn", {
+    content: "Improve it? Tell us how!",
+  });
 }
 
 export default initTippy;

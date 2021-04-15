@@ -24,15 +24,15 @@ import "../stylesheets/application"
 // import { initSelect2 } from '../components/init_select2';
 import "controllers";
 import initAlerts from '../components/init_alerts';
+import initNavbarScroll from '../components/init_navbar_scroll';
 import initAos from "../plugins/init_aos";
 import initMasonry from "../plugins/init_masonry";
 import initTippy from "../plugins/init_tippy";
 import { fireSweetAlert } from "../utils/fire_sweet_alert";
 
 document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  // initSelect2();
   initAlerts();
+  initNavbarScroll();
   initAos();
   initMasonry();
   fireSweetAlert();

@@ -1,4 +1,4 @@
-.text-gradient {
+.text-gradient--blue {
   background-image: -webkit-gradient(
   linear,
   left top,
@@ -8,4 +8,28 @@
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.text-gradient--pink {
+  background-image: -webkit-gradient(
+  linear,
+  left top,
+  right top,
+  color-stop(0.01, var(--dark-pink)),
+  color-stop(0.76, var(--pink))
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-gradient--blue {
+  background: linear-gradient(135deg, rgba(0,78,154,0.4) 0%, rgba(66,140,212,0.4) 100%);
+}
+
+.bg-white {
+  background: white;
+}
+
+.bg-transparent {
+  background: transparent;
 }
