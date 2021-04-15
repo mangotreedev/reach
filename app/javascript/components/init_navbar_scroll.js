@@ -18,11 +18,11 @@ const initNavbarScroll = () => {
     }
 
     const navbarCheck = () => {
-      const banner = document.querySelector('.banner')
+      const banner = document.querySelector('.banner');
       if (window.scrollY >= banner.clientHeight) {
-        navbar.classList.add("bg-white");
+        navbar.classList.remove("bg-transparent");
       } else {
-        navbar.classList.remove("bg-white");
+        navbar.classList.add("bg-transparent");
       }
     }
 
