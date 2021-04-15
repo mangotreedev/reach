@@ -1,6 +1,7 @@
 const initNavbarScroll = () => {
   const navbar = document.querySelector(".js-nav-scroll");
-  if (navbar) {
+  const banner = document.querySelector(".banner");
+  if (banner) {
     function debounce(func, wait = 10, immediate = true) {
       var timeout;
       return function () {
@@ -18,7 +19,6 @@ const initNavbarScroll = () => {
     }
 
     const navbarCheck = () => {
-      const banner = document.querySelector('.banner');
       if (window.scrollY >= banner.clientHeight) {
         navbar.classList.remove("bg-transparent");
       } else {
