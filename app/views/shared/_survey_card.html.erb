@@ -31,10 +31,10 @@
       <%= render 'shared/share_btn', survey: survey %>
     </div>
   </div>
-  <div class="survey__choices">
-    <div class="choices">
+  <div class="survey__choices my-4">
+    <div class="choices flex w-full justify-between">
       <% survey.choices.each do |choice| %>
-        <%= link_to choice_votes_path(choice), method: :post do %>
+        <%= link_to choice_votes_path(choice), method: :post, class: 'w-1/4 border-8 border-transparent hover:border-white' do %>
           <%= render 'choices/choice', choice: choice %>
         <% end %>
       <% end %>
