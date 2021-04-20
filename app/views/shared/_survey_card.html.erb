@@ -1,6 +1,6 @@
-<div class="flex survey">
+<div class="survey mx-auto w-full sm:w-2/3 md:w-1/2 lg:w-1/3">
   <div class="survey__photo">
-    <h1 class="">Who's the reacher</h1>
+    <h1 class="">Cast your vote</h1>
     <%= cl_image_tag survey.photo.key, height: 500, width: 700, crop: :limit, format: :jpg %>
     <div data-controller="modal">
       <button type="button" class="px-12 py-3 bg-red-500 text-white
@@ -35,7 +35,6 @@
     <%= render 'shared/share_btn', survey: survey %>
   </div>
   <div class="survey__choices">
-    <h1 class="">The Choices</h1>
     <div class="choices">
       <% survey.choices.each do |choice| %>
         <%= link_to choice_votes_path(choice), method: :post do %>
