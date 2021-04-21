@@ -35,7 +35,7 @@
 
   <div class="survey__choices mt-12 mb-4 glass-card p-4">
     <h3 class="text-white mt-0">Cast your vote</h3>
-    <div class="choices flex w-full justify-between">
+    <div class="choices flex w-full justify-center flex-wrap">
       <% survey.choices.each do |choice| %>
         <%= link_to choice_votes_path(choice), method: :post, class: 'w-1/4 border-8 border-transparent hover:border-white' do %>
           <%= render 'choices/choice', choice: choice %>
