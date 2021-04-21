@@ -2,15 +2,56 @@
   .gradient-triangle {
     position: absolute;
     z-index: 0;
-    bottom: -8%;
-    right: -50%;
+    bottom: -10%;
+    right: -10%;
     transform: rotate(120deg);
+    width: 60%;
   }
   .gradient-squiggles {
     position: absolute;
     z-index: 0;
-    bottom: 36%;
+    bottom: 8%;
     left: -10%;
     transform: rotate(45deg);
+    width: 45%
   }
+}
+
+
+// Breakpoint :sm
+@media only screen and (min-width: 640px) {
+
+}
+
+// Breakpoint :md
+@media only screen and (min-width: 768px) {
+
+}
+
+// Breakpoint :lg
+@media only screen and (min-width: 1024px) {
+
+}
+
+// Breakpoint :xl
+@media only screen and (min-width: 1280px) {
+  .survey {
+    .gradient-triangle {
+      bottom: -8%;
+      right: -50%;
+      transform: rotate(120deg);
+      width: auto;
+    }
+    .gradient-squiggles {
+      bottom: 36%;
+      left: -10%;
+      transform: rotate(45deg);
+      width: auto;
+    }
+  }
+}
+
+// Breakpoint :2xl
+@media only screen and (min-width: 1536px) {
+
 }
