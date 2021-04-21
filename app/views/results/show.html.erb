@@ -1,9 +1,11 @@
-
-<div class="flex survey">
-  <div class="survey__photo">
-    <h1 class="text-6xl font-bold">Who's the reacher</h1>
-    <%= cl_image_tag @survey.photo.key, height: 500, width: 700, crop: :fill, format: :jpg %>
-    <%= render 'shared/share_btn', survey: @survey  %>
+<div class="survey mx-auto w-full sm:w-2/3 md:w-1/2 lg:w-2/5 py-12 relative">
+  <%= inline_svg_tag "gradient_triangle.svg", class: "gradient-triangle" %>
+  <%= inline_svg_tag "gradient_squiggles.svg", class: "gradient-squiggles" %>
+  <div class="survey__photo relative">
+    <%= cl_image_tag @survey.photo.key, height: 500, width: 700, crop: :fill, format: :jpg, class: 'rounded-sm' %>
+    <div class="survey__options-block absolute bottom-2 right-3 flex">
+      <%= render 'shared/share_btn', survey: @survey %>
+    </div>
   </div>
 
   <div class="survey__choices">
