@@ -2,7 +2,7 @@
   width: 100vw;
   height: 100vh;
   position: relative;
-    background-image: url('https://images.unsplash.com/photo-1544617886-d740448424f5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80');
+  background-image: asset-url('banner_still.jpeg');
   background-size: cover;
   &__video {
     display: none;
