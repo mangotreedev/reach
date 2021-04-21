@@ -48,25 +48,20 @@
 
 .rules {
   width: 100vw;
-  height: 95vh;
   position: relative;
   text-align: center;
-  &__content {
-
-  }
   &__photo-one {
-    position: absolute;
+    position: relative;
     z-index: 1;
     border: white solid 24px;
-    width: 640px;
+    width: 440px;
     transform: rotate(15deg);
-    top: 18%;
-    left: 50%;
+    margin: 3rem 0;
   }
   .gradient-squiggles {
     position: absolute;
-    z-index: 1;
-    top: 5%;
+    z-index: 0;
+    top: -12%;
     left: 5%;
     transform: rotate(115deg);
   }
@@ -82,7 +77,6 @@
 @media only screen and (min-width: 768px) {
 .works {
   height: 95vh;
-  position: relative;
   &__photo-one {
     position: absolute;
     width: 480px;
@@ -128,6 +122,24 @@
     top: 5%;
     right: 10%;
     transform: rotate(60deg);
+  }
+}
+
+.rules {
+  height: 95vh;
+  &__photo-one {
+    position: absolute;
+    z-index: 1;
+    width: 640px;
+    top: 18%;
+    left: 50%;
+  }
+  .gradient-squiggles {
+    position: absolute;
+    z-index: 1;
+    top: 5%;
+    left: 5%;
+    transform: rotate(115deg);
   }
 }
 }
