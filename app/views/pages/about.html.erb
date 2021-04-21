@@ -2,11 +2,11 @@
   <%= "bg-transparent fixed" %>
 <% end %>
 
-<div class="banner px-32 flex flex-col justify-center">
+<div class="banner px-4 sm:px-24 lg:px-32 flex flex-col justify-center">
   <video autoplay muted loop class="banner__video">
     <source src="<%= video_path("bideo_one.mp4") %>" type="video/mp4">
   </video>
-  <div class="banner__content w-1/2">
+  <div class="banner__content w-100 sm:w-5/6 lg:w-1/2">
     <h1 class="text-gradient--blue">Reach</h1>
     <h4 class="text-white font-semibold mb-4 text-shadow--light">Every relationship has a reacher and a settler.</h4>
     <h4 class="text-white font-semibold text-shdaow--light">...which one are you?</h4>
