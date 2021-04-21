@@ -33,3 +33,4 @@ Rails.application.routes.draw do
   end
 end
 
+# TODO: review full app and refactor wherever you can
