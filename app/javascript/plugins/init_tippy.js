@@ -22,6 +22,12 @@ const initTippy = () => {
   tippy(".issue-btn", {
     content: "Improve it? Tell us how!",
   });
+  tippy(".share-btn", {
+    content: "Share the url with friends",
+  });
+  tippy(".report-btn", {
+    content: "Report this photo",
+  });
 }
 
 export default initTippy;
