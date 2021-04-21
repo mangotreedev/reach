@@ -30,6 +30,7 @@
             <%= link_to '<i class="fas fa-vote-yea text-green-500"></i>'.html_safe, survey_results_path(survey), class: "results-btn" %>
           <% end %>
         </div>
+        <%# TODO: Add tooltips for all icons and hover effects %>
         <div class="img-gradient">
           <%= cl_image_tag survey.photo.key, crop: :fill, class: "rounded", format: :jpg %>
         </div>
