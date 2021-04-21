@@ -29,6 +29,7 @@ import initAos from "../plugins/init_aos";
 import initMasonry from "../plugins/init_masonry";
 import initTippy from "../plugins/init_tippy";
 import { fireSweetAlert } from "../utils/fire_sweet_alert";
+import { initProgressBar } from "../components/init_progress_bar"
 
 document.addEventListener('turbolinks:load', () => {
   initAlerts();
@@ -37,6 +38,7 @@ document.addEventListener('turbolinks:load', () => {
   initMasonry();
   fireSweetAlert();
   initTippy();
+  initProgressBar();
 });
 
 
