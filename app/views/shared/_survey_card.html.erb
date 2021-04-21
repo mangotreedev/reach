@@ -1,4 +1,6 @@
-<div class="survey mx-auto w-full sm:w-2/3 md:w-1/2 lg:w-2/5 py-16">
+<div class="survey mx-auto w-full sm:w-2/3 md:w-1/2 lg:w-2/5 py-12 relative">
+  <%= inline_svg_tag "gradient_triangle.svg", class: "gradient-triangle" %>
+  <%= inline_svg_tag "gradient_squiggles.svg", class: "gradient-squiggles" %>
   <div class="survey__photo relative">
     <%= cl_image_tag survey.photo.key, height: 500, width: 700, crop: :limit, format: :jpg, class: 'rounded-sm' %>
     <div class="survey__options-block absolute top-2 right-3 flex">
@@ -31,8 +33,8 @@
     </div>
   </div>
 
-  <div class="survey__choices my-4 glass-card pb-4 px-4">
-    <h3 class="">Cast your vote</h3>
+  <div class="survey__choices mt-8 mb-4 glass-card p-4">
+    <h3 class="text-white mt-0">Cast your vote</h3>
     <div class="choices flex w-full justify-between">
       <% survey.choices.each do |choice| %>
         <%= link_to choice_votes_path(choice), method: :post, class: 'w-1/4 border-8 border-transparent hover:border-white' do %>

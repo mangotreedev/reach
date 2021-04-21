@@ -1,0 +1,16 @@
+.survey {
+  .gradient-triangle {
+    position: absolute;
+    z-index: 0;
+    bottom: -8%;
+    right: -50%;
+    transform: rotate(120deg);
+  }
+  .gradient-squiggles {
+    position: absolute;
+    z-index: 0;
+    bottom: 36%;
+    left: -10%;
+    transform: rotate(45deg);
+  }
+}
