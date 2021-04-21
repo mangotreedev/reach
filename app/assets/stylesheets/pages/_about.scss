@@ -117,12 +117,13 @@
   }
   .gradient-triangle {
     z-index: 1;
-    bottom: 40%;
+    bottom: -18%;
     right: -3%;
     transform: rotate(10deg);
   }
   .gradient-squiggles {
     display: block;
+    position: absolute;
     z-index: 3;
     top: 5%;
     right: 10%;
