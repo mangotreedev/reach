@@ -1,60 +1,122 @@
 .works {
   width: 100vw;
-  height: 95vh;
   position: relative;
-  &__content {
-
-  }
   &__photo-one {
+    position: relative;
+    border: white solid 24px;
+    width: 400px;
+    transform: rotate(15deg);
+    margin-top: 3rem;
+  }
+  .gradient-triangle {
     position: absolute;
+    z-index: 0;
+    bottom: 6%;
+    left: 0;
+    transform: rotate(28deg);
+  }
+  .gradient-squiggles {
+    position: absolute;
+    z-index: 0;
+    top: -1%;
+    right: -5%;
+    transform: rotate(120deg);
+  }
+}
+
+.about {
+  width: 100vw;
+  position: relative;
+  &__photo-two {
+    position: relative;
+    border: white solid 24px;
+    width: 400px;
+    transform: rotate(-15deg);
+    margin-top: 3rem;
+  }
+  .gradient-triangle {
+    position: absolute;
+    z-index: 0;
+    bottom: 40%;
+    right: -3%;
+    transform: rotate(10deg);
+  }
+  .gradient-squiggles {
+    display: none;
+  }
+}
+
+.rules {
+  width: 100vw;
+  position: relative;
+  text-align: center;
+  &__photo-one {
+    position: relative;
     z-index: 1;
     border: white solid 24px;
+    width: 440px;
+    transform: rotate(15deg);
+    margin: 3rem 0;
+  }
+  .gradient-squiggles {
+    position: absolute;
+    z-index: 0;
+    top: -12%;
+    left: 5%;
+    transform: rotate(115deg);
+  }
+}
+
+
+// Breakpoint :sm
+@media only screen and (min-width: 640px) {
+
+}
+
+// Breakpoint :md
+@media only screen and (min-width: 768px) {
+.works {
+  height: 95vh;
+  &__photo-one {
+    position: absolute;
     width: 480px;
     transform: rotate(15deg);
     bottom: 10%;
     right: 8%;
+    margin-top: 0;
   }
   .gradient-triangle {
-    position: absolute;
     z-index: 1;
     bottom: -25%;
     left: 0;
     transform: rotate(120deg);
   }
   .gradient-squiggles {
-    position: absolute;
     z-index: 3;
     top: 5%;
     right: 40%;
-    transform: rotate(60deg);
     transform: scaleX(-1);
   }
 }
 
 .about {
-  width: 100vw;
   height: 95vh;
   position: relative;
   &__photo-two {
     position: absolute;
-    z-index: 1;
-    border: white solid 24px;
     width: 560px;
     transform: rotate(-15deg);
     bottom: 10%;
     right: 52%;
   }
-  &__content {
-
-  }
   .gradient-triangle {
-    position: absolute;
     z-index: 1;
     bottom: -18%;
     right: -3%;
     transform: rotate(10deg);
   }
   .gradient-squiggles {
+    display: block;
     position: absolute;
     z-index: 3;
     top: 5%;
@@ -64,19 +126,11 @@
 }
 
 .rules {
-  width: 100vw;
   height: 95vh;
-  position: relative;
-  text-align: center;
-  &__content {
-
-  }
   &__photo-one {
     position: absolute;
     z-index: 1;
-    border: white solid 24px;
     width: 640px;
-    transform: rotate(15deg);
     top: 18%;
     left: 50%;
   }
@@ -87,4 +141,20 @@
     left: 5%;
     transform: rotate(115deg);
   }
+}
+}
+
+// Breakpoint :lg
+@media only screen and (min-width: 1024px) {
+
+}
+
+// Breakpoint :xl
+@media only screen and (min-width: 1280px) {
+
+}
+
+// Breakpoint :2xl
+@media only screen and (min-width: 1536px) {
+
 }

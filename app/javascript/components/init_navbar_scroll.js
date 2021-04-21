@@ -20,9 +20,9 @@ const initNavbarScroll = () => {
 
     const navbarCheck = () => {
       if (window.scrollY >= banner.clientHeight) {
-        navbar.classList.remove("bg-transparent");
+        navbar.classList.remove("sm:bg-transparent");
       } else {
-        navbar.classList.add("bg-transparent");
+        navbar.classList.add("sm:bg-transparent");
       }
     }
 
