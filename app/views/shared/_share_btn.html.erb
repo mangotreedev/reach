@@ -1,8 +1,3 @@
 <div data-controller="clipboard">
-  <button type="button" class="px-12 py-3 bg-blue-500 text-white
-            rounded border border-blue-500 inline-block
-            hover:bg-blue-400 hover:border-blue-400 focus:outline-none
-            transition duration-300 w-full" data-action='click->clipboard#copy' data-url="<%= survey_url(survey) %>">
-    Share Link <i class="far fa-clipboard"></i>
-  </button>
+  <i class="fas fa-share text-blue-500 inline-block hover:text-blue-400 transition duration-300 cursor-pointer text-4xl ml-2" data-action='click->clipboard#copy' data-url="<%= survey_url(survey) %>"></i>
 </div>
