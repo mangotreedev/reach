@@ -1,19 +1,20 @@
-<div class="flex survey justify-around">
-  <div class="cropper">
-    <h1 class="text-6xl font-bold">Add choices to your survey!</h1>
+<div class="choices mx-auto w-full sm:w-2/3 md:w-1/2 lg:w-2/5 py-12 relative">
+  <%= inline_svg_tag "gradient_triangle.svg", class: "gradient-triangle" %>
+  <%= inline_svg_tag "gradient_squiggles.svg", class: "gradient-squiggles" %>
+  <div class="">
     <div class='cropper' data-controller="cropper" data-cropper-survey-id="<%= @survey.id %>">
       <%= cl_image_tag @survey.photo.key, id: 'js-crop-image', class: 'cropper__image', crop: :fill, data: { 'cropper-target': 'image'}, format: :jpg %>
       <button
         data-action="click->cropper#addChoice"
-        class='px-12 w-full py-3 bg-yellow-400 text-white rounded border border-yellow-400 inline-block hover:bg-yellow-300 hover:border-yellow-300 focus:outline-none transition duration-300'>
+        class='btn btn-gradient focus:outline-none w-full mt-4'>
           Add Choice
       </button>
     </div>
   </div>
 
-  <div class="pending-choices">
-    <h1 class="text-6xl font-bold">Pending Choices</h1>
-    <div class="choices">
+  <div class="pending-choices mt-4 mb-4 glass-card p-4">
+    <h3 class="text-white mt-0">Pending Choices</h3>
+    <div class="choices__container">
       <% @survey.choices.each do |choice| %>
         <%= render 'choices/pending', choice: choice %>
       <% end %>
@@ -21,7 +22,7 @@
     <%= link_to "Publish Photo for Rating",
     survey_publication_path(@survey),
     method: :post,
-    class: 'px-12 py-3 bg-yellow-400 text-white rounded border border-yellow-400 inline-block hover:bg-yellow-300 hover:border-yellow-300 focus:outline-none transition duration-300 w-full'  %>
+    class: 'btn btn-gradient focus:outline-none w-full mt-4'  %>
   </div>
 </div>
 
