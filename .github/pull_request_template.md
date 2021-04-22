@@ -20,6 +20,7 @@ Please delete options that are not relevant.
 - [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
 - [ ] Configuration (non-breaking change which sets up application for environs)
 - [ ] Bug fix (non-breaking change which fixes an issue)
+- [ ] Style (non-breaking change focused on front end style)
 
 ## How Has This Been Tested? :microscope:
 Please describe the tests that you ran to verify your changes.  Please also list any relevant details for your test configuration
@@ -33,5 +34,5 @@ Please describe the tests that you ran to verify your changes.  Please also list
 ## Photos :see_no_evil:
 Please provide photos of changes made as necessary
 
-_Built with love_ :heart: 
+_Built with love_ :heart:
 _By Nico_:wolf: _and Sy_:turtle:
