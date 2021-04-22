@@ -26,7 +26,7 @@ export default class extends Controller {
     })
     .then((response) => response.json())
     .then((data) => {
-      const choicesContainer = document.querySelector('.choices');
+      const choicesContainer = document.querySelector('.choices__container');
       choicesContainer.insertAdjacentHTML('beforeend', data.choice)
     });
   };
