@@ -12,10 +12,12 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
-  <body class="bg-gradient--blue">
+  <body class="bg-gradient--blue flex flex-col min-h-screen">
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <%= yield %>
+    <div class="flex-grow">
+      <%= yield %>
+    </div>
     <%= render 'shared/footer' %>
   </body>
 </html>

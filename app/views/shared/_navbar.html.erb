@@ -15,7 +15,7 @@
         <%= link_to "Gallery", surveys_path, class: "block md:inline-block px-4 py-3 no-underline  text-gradient--blue"  %>
       </li>
       <li class="border-t md:border-none">
-        <%= link_to "About", about_path, class: "block md:inline-block px-4 py-3 no-underline  text-gradient--blue"  %>
+        <%= link_to "About", about_path, class: "block md:inline-block px-4 py-3 no-underline  text-gradient--blue", data: { turbolinks: false }  %>
       </li>
       <% if user_signed_in? %>
         <li class="border-t md:border-none">
