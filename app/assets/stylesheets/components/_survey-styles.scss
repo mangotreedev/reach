@@ -1,0 +1,23 @@
+.category-selector {
+  position: absolute;
+  transform: scale(0);
+}
+
+.category-selector + label {
+  display: block;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  border: 4px solid white;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+.category-selector:checked + label {
+  background: linear-gradient(135deg, var(--dark-blue) 0%, var(--light-blue) 100%);
+}
+
+

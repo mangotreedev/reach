@@ -3,7 +3,7 @@
 # Use this setup block to configure all options available in SimpleForm.
 SimpleForm.setup do |config|
   # Default class for buttons
-  config.button_class = 'my-2 bg-blue-500 hover:bg-blue-700 text-white font-bold text-sm py-2 px-4 rounded'
+  config.button_class = 'my-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-4 rounded'
 
   # Define the default class of the input wrapper of the boolean input.
   config.boolean_label_class = ''
@@ -59,7 +59,7 @@ SimpleForm.setup do |config|
     b.wrapper tag: 'div', class: 'flex items-center h-5' do |ba|
       ba.use :input, class: 'focus:ring-2 focus:ring-indigo-500:focus ring-offset-2 h-4 w-4 text-indigo-600 border-gray-300 rounded'
     end
-    b.wrapper tag: 'div', class: 'ml-3 text-sm' do |bb|
+    b.wrapper tag: 'div', class: 'text-sm' do |bb|
       bb.use :label, class: 'block', error_class: 'text-red-500'
       bb.use :hint, wrap_with: { tag: 'p', class: 'block text-grey-700 text-xs italic' }
       bb.use :full_error, wrap_with: { tag: 'p', class: 'block text-red-500 text-xs italic' }
@@ -68,7 +68,7 @@ SimpleForm.setup do |config|
   end
 
   # vertical input for radio buttons and check boxes
-  config.wrappers :vertical_collection, item_wrapper_class: 'flex items-center', item_label_class: 'my-1 ml-3 block text-sm font-medium text-gray-400', tag: 'div', class: 'my-4' do |b|
+  config.wrappers :vertical_collection, item_wrapper_class: 'flex items-center', item_label_class: 'my-1 block font-medium', tag: 'div', class: 'my-4' do |b|
     b.use :html5
     b.optional :readonly
     b.wrapper :legend_tag, tag: 'legend', class: 'text-sm font-medium text-gray-600', error_class: 'text-red-500' do |ba|
