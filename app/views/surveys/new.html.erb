@@ -1,7 +1,26 @@
-<h1 class="text-6xl font-bold">Add a new survey!</h1>
+ <div class="add-photo-form w-full sm:w-2/3 md:w-1/2 lg:w-1/3 mx-auto mt-16">
+  <%= inline_svg_tag "gradient_triangle.svg", class: "gradient-triangle" %>
+  <%= inline_svg_tag "gradient_squiggles.svg", class: "gradient-squiggles" %>
+  <div class="glass-card p-4 mb-24">
+    <h3 class="text-white mt-0">Add a photo!</h3>
+    <%= simple_form_for @survey do |f| %>
+      <%= f.input :style,
+            as: :radio_buttons,
+            collection: Survey.styles.keys,
+            legend_tag: false,
+            label_method: :humanize,
+            collection_wrapper_tag: 'div',
+            collection_wrapper_class: 'category-wrapper mb-6',
+            item_wrapper_class: 'category-item',
+            input_html: {class: 'category-selector'}
+             %>
+      <div class="upload-input w-full my-2 mx-auto" data-controller="upload">
+        <label for="upload_input" class="w-full text-center py-14 block cursor-pointer border-4 border-white-500 rounded border-dashed transition duration-300 text-white font-bold text-shadow--light" data-upload-target=
+        "label" data-action="dragover->upload#dragIn dragleave->upload#dragOut drop->upload#dropFile">Drag a file here or <span class="text-gradient--blue">browse</span> for a file to upload</label>
+        <%= f.input :photo, as: :file, label: false, input_html: { id: "upload_input", class: "hidden", data: { "upload-target": "input", "action": "click->upload#clear change->upload#changeInput" }} %>
+      </div>
+      <%= f.button :submit, class: "btn btn-gradient focus:outline-none w-full mt-4" %>
+    <% end %>
+  </div>
+</div>
 
-<%= simple_form_for @survey do |f| %>
-  <%= f.input :style, as: :radio_buttons, collection: Survey.styles.keys, label_method: :humanize %>
-  <%= f.input :photo, as: :file %>
-  <%= f.button :submit %>
-<% end %>
