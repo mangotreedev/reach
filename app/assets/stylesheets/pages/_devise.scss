@@ -5,8 +5,8 @@
   overflow: hidden;
   display: flex;
   align-items: center;
-  padding-left: 5vw;
   &__banner {
+    display: none;
     position: absolute;
     z-index: 0;
     top: 0;
@@ -25,7 +25,16 @@
 
 // Breakpoint :sm
 @media only screen and (min-width: 640px) {
-
+.devise {
+  padding-left: 5vw;
+  &__banner {
+    display: block;
+  }
+  &__triangle {
+    display: block;
+    left: -40%
+  }
+}
 }
 
 // Breakpoint :md
