@@ -24,6 +24,11 @@
         <li class="">
           <%= link_to "Dashboard", user_dashboard_path, class: "block md:inline-block sm:px-4 py-3 no-underline text-gradient--blue"  %>
         </li>
+        <% if policy('Admin::Dashboard'.to_sym).show? %>
+          <li class="">
+            <%= link_to "Admin", admin_dashboard_path, class: "block md:inline-block sm:px-4 py-3 no-underline text-gradient--blue"  %>
+          </li>
+        <% end %>
         <li class="">
           <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "block md:inline-block sm:px-4 py-3 no-underline text-gradient--blue"  %>
         </li>
