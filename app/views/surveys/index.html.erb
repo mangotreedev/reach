@@ -1,11 +1,12 @@
 <div class="container mx-auto sm:w-full md:w-10/12 lg:w-3/4 p-4">
   <h1 class="text-gray-800">Gallery View</h1>
-  <div class="tabs">
-    <%= link_to "All", surveys_path, class: "mr-4"%>
-    <%= link_to "Most Contreversial", surveys_path(filter: "most"), class: "mr-4"%>
-    <%= link_to "Least Contreversial", surveys_path(filter: "least"), class: "mr-4"%>
-    <%= link_to "New", surveys_path(filter: "new"), class: "mr-4"%>
-    <%= link_to "Most Votes", surveys_path(filter: "votes"), class: "mr-4"%>
+  <div class="tabs flex w-full justify-center flex-wrap">
+    <%= link_to "All", surveys_path, class: "text-center text-white border-4 px-4 py-2 rounded m-2 font-bold"%>
+    <%= link_to "Most Votes", surveys_path(filter: "votes"), class: "text-center text-white border-4 px-4 py-2 rounded m-2 font-bold"%>
+    <%= link_to "Most Contreversial", surveys_path(filter: "most"), class: "text-center text-white border-4 px-4 py-2 rounded m-2 font-bold"%>
+    <%= link_to "Least Contreversial", surveys_path(filter: "least"), class: "text-center text-white border-4 px-4 py-2 rounded m-2 font-bold"%>
+    <%= link_to "New", surveys_path(filter: "new"), class: "text-center text-white border-4 px-4 py-2 rounded m-2 font-bold"%>
+
     <%# TODO: Have cute icons for these %>
   </div>
   <%# <div class="loadingbar"></#div> %>
