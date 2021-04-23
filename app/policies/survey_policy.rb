@@ -1,7 +1,7 @@
 class SurveyPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.published.approved
+      scope.published.approved.includes([photo_attachment: :blob])
     end
   end
 
