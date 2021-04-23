@@ -1,17 +1,13 @@
 <div class="container mx-auto sm:w-full md:w-10/12 lg:w-3/4 p-4">
-  <h1 class="text-gray-800">Gallery View</h1>
-  <div class="tabs flex w-full justify-center flex-wrap">
-    <%= link_to "All", surveys_path, class: "text-center text-white border-4 px-4 py-2 rounded m-2 font-bold"%>
-    <%= link_to "Most Votes", surveys_path(filter: "votes"), class: "text-center text-white border-4 px-4 py-2 rounded m-2 font-bold"%>
-    <%= link_to "Most Contreversial", surveys_path(filter: "most"), class: "text-center text-white border-4 px-4 py-2 rounded m-2 font-bold"%>
-    <%= link_to "Least Contreversial", surveys_path(filter: "least"), class: "text-center text-white border-4 px-4 py-2 rounded m-2 font-bold"%>
-    <%= link_to "New", surveys_path(filter: "new"), class: "text-center text-white border-4 px-4 py-2 rounded m-2 font-bold"%>
-
-    <%# TODO: Have cute icons for these %>
+  <div class="tabs flex w-full justify-center flex-wrap my-8">
+    <%= link_to "All <i class='fas fa-th'></i>".html_safe, surveys_path, class: "text-center text-white border-4 px-4 py-2 rounded m-2 font-bold hover:opacity-50 transition duration-300"%>
+    <%= link_to "Most Votes <i class='fas fa-award'></i>".html_safe, surveys_path(filter: "votes"), class: "text-center text-white border-4 px-4 py-2 rounded m-2 font-bold hover:opacity-50 transition duration-300"%>
+    <%= link_to "Most Contreversial <i class='fas fa-sort-amount-down'></i>".html_safe, surveys_path(filter: "most"), class: "text-center text-white border-4 px-4 py-2 rounded m-2 font-bold hover:opacity-50 transition duration-300"%>
+    <%= link_to "Least Contreversial <i class='fas fa-sort-amount-up'></i>".html_safe, surveys_path(filter: "least"), class: "text-center text-white border-4 px-4 py-2 rounded m-2 font-bold hover:opacity-50 transition duration-300"%>
+    <%= link_to "New <i class='fas fa-fire-alt'></i>".html_safe, surveys_path(filter: "new"), class: "text-center text-white border-4 px-4 py-2 rounded m-2 font-bold hover:opacity-50 transition duration-300"%>
   </div>
-  <%# <div class="loadingbar"></#div> %>
-  <div class="surveys-masonry">
 
+  <div class="surveys-masonry">
     <% @surveys.each do |survey| %>
       <div class="survey-tile">
         <%= link_to survey_path(survey) do %>
