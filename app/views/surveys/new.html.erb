@@ -2,7 +2,7 @@
   <%= inline_svg_tag "gradient_triangle.svg", class: "gradient-triangle" %>
   <%= inline_svg_tag "gradient_squiggles.svg", class: "gradient-squiggles" %>
   <div class="glass-card p-4 mb-24">
-    <h3 class="text-white mt-0">Add a photo!</h3>
+    <h3 class="text-white mt-0 text-shadow--light">Add a photo!</h3>
     <%= simple_form_for @survey do |f| %>
       <%= f.input :style,
             as: :radio_buttons,
@@ -15,7 +15,7 @@
             input_html: {class: 'category-selector'}
              %>
       <div class="upload-input w-full my-2 mx-auto" data-controller="upload">
-        <label for="upload_input" class="w-full text-center py-14 block cursor-pointer border-4 border-white-500 rounded border-dashed transition duration-300 text-white font-bold text-shadow--light" data-upload-target=
+        <label for="upload_input" class="w-full text-center py-14 block cursor-pointer border-4 border-white-500 rounded border-dashed transition duration-300 text-white text-shadow--light" data-upload-target=
         "label" data-action="dragover->upload#dragIn dragleave->upload#dragOut drop->upload#dropFile">Drag a file here or <span class="text-gradient--blue">browse</span> for a file to upload</label>
         <%= f.input :photo, as: :file, label: false, input_html: { id: "upload_input", class: "hidden", data: { "upload-target": "input", "action": "click->upload#clear change->upload#changeInput" }} %>
       </div>
