@@ -1,16 +1,15 @@
-<div class="container mx-auto sm:w-full md:w-10/12 lg:w-3/4 p-4">
-  <h1 class="text-gray-800">Gallery View</h1>
-  <div class="tabs">
-    <%= link_to "All", surveys_path, class: "mr-4"%>
-    <%= link_to "Most Contreversial", surveys_path(filter: "most"), class: "mr-4"%>
-    <%= link_to "Least Contreversial", surveys_path(filter: "least"), class: "mr-4"%>
-    <%= link_to "New", surveys_path(filter: "new"), class: "mr-4"%>
-    <%= link_to "Most Votes", surveys_path(filter: "votes"), class: "mr-4"%>
-    <%# TODO: Have cute icons for these %>
+<div class="gallery container mx-auto sm:w-full md:w-10/12 lg:w-3/4 p-4 relative">
+  <%= inline_svg_tag "gradient_triangle.svg", class: "gradient-triangle" %>
+  <%= inline_svg_tag "gradient_squiggles.svg", class: "gradient-squiggles" %>
+  <div class="tabs flex justify-center flex-wrap my-8 glass-card py-4">
+    <%= link_to "All <i class='fas fa-th'></i>".html_safe, surveys_path, class: "text-center text-white border-4 px-4 py-2 rounded m-2 font-bold hover:opacity-50 transition duration-300 #{add_background_for(params[:filter], nil)}"%>
+    <%= link_to "Most Votes <i class='fas fa-award'></i>".html_safe, surveys_path(filter: "votes"), class: "text-center text-white border-4 px-4 py-2 rounded m-2 font-bold hover:opacity-50 transition duration-300 #{add_background_for(params[:filter], 'votes')}"%>
+    <%= link_to "Most Controversial <i class='fas fa-sort-amount-down'></i>".html_safe, surveys_path(filter: "most"), class: "text-center text-white border-4 px-4 py-2 rounded m-2 font-bold hover:opacity-50 transition duration-300 #{add_background_for(params[:filter], 'most')}"%>
+    <%= link_to "Least Controversial <i class='fas fa-sort-amount-up'></i>".html_safe, surveys_path(filter: "least"), class: "text-center text-white border-4 px-4 py-2 rounded m-2 font-bold hover:opacity-50 transition duration-300 #{add_background_for(params[:filter], 'least')}"%>
+    <%= link_to "New <i class='fas fa-fire-alt'></i>".html_safe, surveys_path(filter: "new"), class: "text-center text-white border-4 px-4 py-2 rounded m-2 font-bold hover:opacity-50 transition duration-300 #{add_background_for(params[:filter], 'new')}"%>
   </div>
-  <%# <div class="loadingbar"></#div> %>
-  <div class="surveys-masonry">
 
+  <div class="surveys-masonry">
     <% @surveys.each do |survey| %>
       <div class="survey-tile">
         <%= link_to survey_path(survey) do %>
