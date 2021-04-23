@@ -10,7 +10,7 @@ class SurveyPolicy < ApplicationPolicy
   end
 
   def show?
-    record.published? || record.
+    record.published? || record.user == user
   end
 
   def destroy?
