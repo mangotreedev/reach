@@ -40,12 +40,9 @@
 // Breakpoint :md
 @media only screen and (min-width: 768px) {
 .devise {
-  padding-left: 5vw;
   &__banner {
-
   }
   &__triangle {
-    display: block;
     left: -40%
   }
 }
@@ -54,12 +51,9 @@
 // Breakpoint :lg
 @media only screen and (min-width: 1024px) {
 .devise {
-  padding-left: 5vw;
   &__banner {
-
   }
   &__triangle {
-    display: block;
     left: -30%
   }
 }
@@ -68,12 +62,9 @@
 // Breakpoint :xl
 @media only screen and (min-width: 1280px) {
   .devise {
-  padding-left: 5vw;
   &__banner {
-
   }
   &__triangle {
-    display: block;
     left: -20%
   }
 }
