@@ -1,6 +1,6 @@
 <p class="text-gradient--blue mb-4">LET'S HAVE A LAUGH</p>
 <h3 class="text-black mb-4 font-normal">Welcome back!</h3>
-<p class="text-sm text-gray-400 mb-8">Join us as we settle that age old debate amongst your friends. Every group of friends has a reacher and settlers . . . which one are you?</p>
+<p class="text-sm text-gray-400 mb-8">Join us as we settle that age old debate amongst your friends. Every group of friends has a reacher and settlers ...which one are you?</p>
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-inputs">
@@ -27,11 +27,6 @@
   </div>
 <% end %>
 
-<%- if controller_name != 'sessions' %>
-  <p class="text-sm text-gray-400 mb-8">No account yet?</p>
-  <%= link_to "Log in", new_session_path(resource_name) %>
-<% end %>
-
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <p class="text-sm text-gray-400 mt-4">No account yet? <%= link_to "Sign up", new_registration_path(resource_name), class: 'text-gradient--blue' %></p>
+  <p class="text-sm text-gray-400 mt-4">Don't have an account? <%= link_to "Sign up", new_registration_path(resource_name), class: 'text-gradient--blue' %></p>
 <% end %>

@@ -1,6 +1,6 @@
 <p class="text-gradient--blue mb-4">DON'T BE A PRICK</p>
 <h3 class="text-black mb-4 font-normal">Get Started</h3>
-<p class="text-sm text-gray-400 mb-8">It's time to settle that age old debate amongst your friends. Every relationship has a reacher and a settler . . . which one are you?</p>
+<p class="text-sm text-gray-400 mb-8">It's time to settle that age old debate amongst your friends. Every relationship has a reacher and a settler ...which one are you?</p>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
@@ -9,26 +9,38 @@
     <%= f.input :username,
                 required: true,
                 autofocus: true,
+                label: false,
+                placeholder: 'Username',
+                wrapper_html: { class: 'mb-6' },
                 input_html: { autocomplete: "username" }%>
     <%= f.input :email,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "email" }%>
+                label: false,
+                placeholder: 'Email address',
+                input_html: { autocomplete: "email" },
+                wrapper_html: { class: 'mb-6'} %>
     <%= f.input :password,
                 required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                label: false,
+                placeholder: "Password (#{@minimum_password_length} char minimum)",
+                wrapper_html: { class: 'mb-6' },
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :password_confirmation,
                 required: true,
+                label: false,
+                placeholder: "Password confirmation",
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input_field :agree_terms, as: :boolean, required: true %>
-              <span >I agree to the Reach <%= link_to "Terms of Use", terms_of_use_path, class: 'text-blue-600' %> and certify my personal information be provided to Reach in accordance with their <%= link_to "Privacy Policy", privacy_policy_path, class: 'text-blue-600' %>.</span>
+              <label class="text-sm text-black font-medium text-gray-600">I agree to the Reach <%= link_to "Terms of Use", terms_of_use_path, class: 'text-blue-600' %> and certify my personal information be provided to Reach in accordance with their <%= link_to "Privacy Policy", privacy_policy_path, class: 'text-blue-600' %>.</label>
 
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+    <%= f.button :submit, "Sign up", class: 'btn btn-gradient focus:outline-none w-full mt-4' %>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<%- if controller_name != 'sessions' %>
+  <p class="text-sm text-gray-400 mt-4">Already have an account? <%= link_to "Log in", new_session_path(resource_name), class: 'text-gradient--blue' %></p>
+<% end %>
