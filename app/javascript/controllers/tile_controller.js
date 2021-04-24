@@ -17,7 +17,7 @@ export default class extends Controller {
     this.element.remove();
 
     Toast.fire({
-      icon: "error",
+      icon: "success",
       title: "Photo added to circulation",
     });
   }
