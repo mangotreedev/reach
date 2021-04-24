@@ -7,6 +7,8 @@ class PagesController < ApplicationController
 
   def terms_of_use; end
   def privacy_policy; end
-  def about; end
+  def about
+    @sample_survey = Survey.find(16)
+  end
   def kitchensink; end
 end
