@@ -8,6 +8,8 @@ Bundler.require(*Rails.groups)
 
 module Reach
   class Application < Rails::Application
+    config.assets.paths << "#{Rails.root}/app/assets/videos"
+
     config.generators do |generate|
       generate.assets false
       generate.helper false
@@ -15,8 +17,6 @@ module Reach
     end
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
-
-    config.assets.paths << "#{Rails.root}/app/assets/videos"
 
     # Configuration for the application, engines, and railties goes here.
     #
