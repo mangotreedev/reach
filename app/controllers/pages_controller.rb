@@ -5,8 +5,6 @@ class PagesController < ApplicationController
     @survey = RandomSurveySelector.call(@cookie)
   end
 
-  def terms_of_use; end
-  def privacy_policy; end
   def about
     @sample_survey = Survey.last
     # @sample_survey = Survey.find(16)
