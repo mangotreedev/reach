@@ -46,5 +46,6 @@ class ApplicationController < ActionController::Base
     else
       @cookie = SecureRandom.uuid
     end
+    @show_policy = cookies[:reach_shown_policy].nil?
   end
 end
