@@ -22,6 +22,9 @@
     <div class="flex-grow">
       <%= yield %>
     </div>
+    <% if @show_policy %>
+      <%= render 'shared/cookie_modal' %>
+    <% end %>
     <%= render 'shared/footer' %>
   </body>
 </html>
