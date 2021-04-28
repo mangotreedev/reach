@@ -1,0 +1,21 @@
+<div data-controller="cookie">
+  <div class="modal modal--cookie is-visible" data-cookie-target="popup" data-action='click->cookie#agree'>
+    <div class="md:w-1/3 sm:w-full rounded-lg shadow-lg bg-white my-3">
+      <div class="flex justify-between border-b border-gray-100 px-5 py-4">
+        <div class="flex items-center">
+          <i class="fas fa-cookie-bite text-gradient--blue mr-2"></i>
+          <h6 class="text-gray-800">We use cookies</h6>
+        </div>
+      </div>
+      <div class="px-10 py-2 text-gray-600">
+        <p class="sub-text">We use cookies and other tracking technologies to improve your browsing experience on our website, to show you personalized content, to analyze our website traffic, and to understand where our visitors are coming from.</p>
+        <br>
+        <p class="sub-text">Agree to our cookie policy by either clicking "I agree" or closing the modal</p>
+        <div class="flex w-full my-4">
+          <button class="btn btn-gradient py-2 w-1/2" data-action='click->cookie#agree'>I agree</button>
+          <button class="text-gradient--blue w-1/2" data-action='click->cookie#disagree'>I disagree</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

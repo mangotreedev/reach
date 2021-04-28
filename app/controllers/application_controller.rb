@@ -40,7 +40,11 @@ class ApplicationController < ActionController::Base
   end
 
   def find_or_generate_cookie
-    cookies[:reach_cookie] = SecureRandom.uuid unless cookies[:reach_cookie]
-    @cookie ||= cookies[:reach_cookie]
+    if cookies[:reach_cookie_monster]
+      cookies[:reach_cookie] = SecureRandom.uuid unless cookies[:reach_cookie]
+      @cookie ||= cookies[:reach_cookie]
+    else
+      @cookie = SecureRandom.uuid
+    end
   end
 end
