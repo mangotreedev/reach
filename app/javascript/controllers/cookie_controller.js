@@ -16,20 +16,17 @@ export default class extends Controller {
 
   _hide() {
     this.popupTarget.classList.remove("is-visible");
+    location.reload();
   }
 
   agree() {
-    if (event.target === this.agreeTarget) {
-      this._setCookie("reach_cookie_monster", "me_love_cookie");
-      this._setCookie("reach_shown_policy", "true");
-      this._hide();
-    }
+    this._setCookie("reach_cookie_monster", "me_love_cookie");
+    this._setCookie("reach_shown_policy", "true");
+    this._hide();
   }
 
   disagree() {
-    if (event.target === this.disagreeTarget) {
-      this._setCookie("reach_shown_policy", "true");
-      this._hide();
-    }
+    this._setCookie("reach_shown_policy", "true");
+    this._hide();
   }
 }

@@ -10,7 +10,7 @@
       <div class="px-10 py-2 text-gray-600">
         <p class="sub-text">We use cookies and other tracking technologies to improve your browsing experience on our website, to show you personalized content, to analyze our website traffic, and to understand where our visitors are coming from.</p>
         <br>
-        <p class="sub-text">Agree to our cookie policy by either clicking "I agree" or closing the modal</p>
+        <p class="sub-text">Agree to our <a href="<%= PRIVACY['urls']['cookies'] %>" target="_blank" class="text-gradient--blue">Cookie Policy</a> by either clicking "I agree" or closing the modal</p>
         <div class="flex w-full my-4">
           <button class="btn btn-gradient py-2 w-1/2" data-action='click->cookie#agree' data-cookie-target="agree">I agree</button>
           <button class="text-gradient--blue w-1/2" data-action='click->cookie#disagree' data-cookie-target="disagree">I disagree</button>
