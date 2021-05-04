@@ -7,6 +7,8 @@
     <%= link_to "Most Controversial <i class='fas fa-sort-amount-down'></i>".html_safe, surveys_path(filter: "most"), class: "text-center text-white border-4 px-4 py-2 rounded m-2 hover:opacity-50 transition duration-300 #{add_background_for(params[:filter], 'most')}"%>
     <%= link_to "Least Controversial <i class='fas fa-sort-amount-up'></i>".html_safe, surveys_path(filter: "least"), class: "text-center text-white border-4 px-4 py-2 rounded m-2 hover:opacity-50 transition duration-300 #{add_background_for(params[:filter], 'least')}"%>
     <%= link_to "New <i class='fas fa-fire-alt'></i>".html_safe, surveys_path(filter: "new"), class: "text-center text-white border-4 px-4 py-2 rounded m-2 hover:opacity-50 transition duration-300 #{add_background_for(params[:filter], 'new')}"%>
+    <%= link_to "Couples <i class='fas fa-user-friends'></i>".html_safe, surveys_path(filter: "couple"), class: "text-center text-white border-4 px-4 py-2 rounded m-2 hover:opacity-50 transition duration-300 #{add_background_for(params[:filter], 'couple')}"%>
+    <%= link_to "Groups <i class='fas fa-users'></i>".html_safe, surveys_path(filter: "group"), class: "text-center text-white border-4 px-4 py-2 rounded m-2 hover:opacity-50 transition duration-300 #{add_background_for(params[:filter], 'group')}"%>
   </div>
 
   <div class="surveys-masonry">
