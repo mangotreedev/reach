@@ -1,12 +1,12 @@
 <div class="choices mx-auto w-full sm:w-2/3 md:w-1/2 lg:w-2/5 py-12 relative">
   <%= inline_svg_tag "gradient_triangle.svg", class: "gradient-triangle" %>
   <%= inline_svg_tag "gradient_squiggles.svg", class: "gradient-squiggles" %>
-  <div class="">
+  <div class="relative">
     <div class='cropper' data-controller="cropper" data-cropper-survey-id="<%= @survey.id %>">
       <%= cl_image_tag @survey.photo.key, id: 'js-crop-image', class: 'cropper__image', crop: :fill, data: { 'cropper-target': 'image'}, format: :jpg %>
       <button
         data-action="click->cropper#addChoice"
-        class='btn btn-gradient focus:outline-none w-full mt-4'>
+        class='btn btn-gradient focus:outline-none w-full mt-4 z-10'>
           Add Choice
       </button>
     </div>
