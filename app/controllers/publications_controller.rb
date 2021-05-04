@@ -4,6 +4,7 @@ class PublicationsController < ApplicationController
   def create
     if @survey.choices.any?
       @survey.published!
+      flash[:sweetalert] = "Share your photo with friends by pressing the blue arrow button"
       redirect_to @survey
     else
       flash[:sweetalert] = "You must provide choices before publishing"
