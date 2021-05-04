@@ -35,8 +35,6 @@ class SurveysController < ApplicationController
     end
   end
 
-  # TODO: Deal with weird photo formats like HEIC
-
   def show
     @survey = Survey.includes(:choices).find(params[:id])
     authorize @survey
