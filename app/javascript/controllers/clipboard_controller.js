@@ -2,6 +2,7 @@ import { Controller } from "stimulus";
 import { Toast } from "../utils/toast_mixin";
 
 export default class extends Controller {
+  static targets = ["btn"];
 
   _textAreaSetup(url, textTemp) {
     textTemp.style.position = "fixed";
@@ -20,8 +21,8 @@ export default class extends Controller {
     textTemp.select();
   }
 
-  copy(_event) {
-    const url = _event.target.dataset.url;
+  copy() {
+    const url = this.btnTarget.dataset.url;
     const textTemp = document.createElement("textarea");
 
     this._textAreaSetup(url, textTemp);
@@ -32,7 +33,14 @@ export default class extends Controller {
 
     Toast.fire({
       icon: "success",
-      title: "URL copied to clipboard",
+      title: "Share with your friends, URL copied to clipboard",
     });
+  }
+
+  connect() {
+    const trigger = document.querySelector(".js-fire-clipboard-copy-trigger");
+    if (trigger) {
+      this.copy(this.btnTarget);
+    }
   }
 }
