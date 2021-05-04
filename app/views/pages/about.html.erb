@@ -1,50 +1,38 @@
 <% content_for :background do %>
   <%= "bg-white fixed" %>
 <% end %>
-
-<div class="banner px-4 sm:px-24 lg:px-32 flex flex-col justify-center">
+<div class="banner px-4 sm:px-16 xl:px-32 flex flex-col justify-center">
   <%= video_tag "bideo.mp4", autoplay: :autoplay, loop: :loop, mute: :mute, class: "banner__video" %>
   <div class="banner__content w-100 sm:w-5/6 lg:w-1/2">
     <h1 class="text-gradient--blue">Reach</h1>
     <h4 class="text-white font-semibold mb-4 text-shadow--light">Every relationship has a reacher and a settler.</h4>
-    <h4 class="text-white font-semibold text-shdaow--light">...which one are you?</h4>
-    <%= link_to "Find Out", root_path, class: "btn btn-gradient focus:outline-none w-full mt-8" %>
+    <h4 class="text-white font-semibold text-shadow--light">...which one are you?</h4>
+    <%= link_to "Start Voting", root_path, class: "btn btn-gradient focus:outline-none w-full mt-8" %>
   </div>
 </div>
-
-<div class="works px-4 sm:px-24 xl:px-44 md:flex items-center mb-4 mt-12 md:mt-0">
-  <%# TODO: Replace this gif with how it works gif showing how to add choices and then vote %>
+<div class="works px-4 sm:px-16 xl:px-32 md:flex items-center mb-4 mt-12 md:mt-0">
   <%= inline_svg_tag "gradient_triangle.svg", class: "gradient-triangle" %>
   <%= inline_svg_tag "gradient_squiggles.svg", class: "gradient-squiggles" %>
   <div class="works__content w-100 md:w-5/6 lg:w-1/2 glass-card p-4 sm:p-12">
     <h4 class="mb-6 text-white text-shadow--light">How does this <span class="text-gradient--blue">work?</span></h4>
-    <p class="mb-4 text-white text-shadow--light">The premise is simple enough, you upload photos, add a few choices, and have people vote on who the reacher is in the group or relationship. Afterwards, you see the results, and then rinse, wash, and repeat.</p>
-    <p class="text-white text-shadow--light">For those not in the know, a reacher is a kind of jib on a sailing ship, but also, the person in a group or relationship who snagged the most impressive people or person to be with.</p>
-    <%= link_to "Give It A Try", new_user_registration_path, class: "btn btn-gradient focus:outline-none w-full mt-8" %>
+    <p class="mb-4 text-white text-shadow--light">Ever wondered which of your mates is dragging down the team? Have you and your partner ever debated who's the reacher and who's the settler?</p>
+    <p class="text-white text-shadow--light">Well wonder no more. Bravely post your own photos
+      and learn who's the "reacher", the person in the group/couple who "outkicked their coverage". Then, find out how well your opinion matches with users from around the world!</p>
+    <%= link_to "Upload your photo!", new_user_registration_path, class: "btn btn-gradient focus:outline-none w-full mt-8" %>
   </div>
   <%= image_tag 'works__photo_one.gif', class: "works__photo-one"%>
 </div>
-
-<div class="about px-4 sm:px-24 xl:px-44 md:flex items-center mb-4 mt-12 md:mt-0 justify-end">
+<div class="about px-4 sm:px-16 xl:px-32 md:flex items-center mb-24 mt-12 justify-end">
   <%= inline_svg_tag "gradient_triangle.svg", class: "gradient-triangle" %>
   <%= inline_svg_tag "gradient_squiggles.svg", class: "gradient-squiggles" %>
   <div class="about__content w-100 md:w-5/6 lg:w-1/2 glass-card p-4 sm:p-12">
-    <h4 class="mb-6 text-white text-shadow--light">Why does this <span class="text-gradient--blue">exist?</span></h4>
-    <p class="mb-4 text-white text-shadow--light">It all started with my friend Christian's wedding. He's one of my best friends and absolute greatest guys I know, but boy did that guy outkick his coverage. We always tease him about it, but in reality I think we're all hoping we can somehow do the same.</p>
-    <p class="text-white text-shadow--light">This site is for the "Christians" out there, the ones who shoot for the moon, and actually make it! The one's who prove the old adage, you should never judge a book by it's cover.</p>
-  </div>
-  <%= image_tag 'about__photo_two.jpg', class: "about__photo-two"%>
-</div>
-
-<div class="rules px-4 sm:px-24 xl:px-44 md:flex items-center mb-4 mt-12 md:mt-0">
-  <%= inline_svg_tag "gradient_squiggles.svg", class: "gradient-squiggles" %>
-  <div class="rules__content w-100 md:w-5/6 lg:w-1/2 glass-card p-4 sm:p-12">
-    <h4 class="mb-6 text-white text-shadow--light">Don't be a <span class="text-gradient--blue">prick</span></h4>
-    <p class="mb-4 text-white text-shadow--light">Sadly, with all great things, there are going to be people who abuse it. Our one ask here at Reach is simply don't be a prick. Don't upload photos without people's permission, don't upload anything gross, and treat this as it was meant to be treated. . . a way to laugh and have fun with your friends.</p>
-    <p class="text-white text-shadow--light">From one reacher (I'm on the left) to you, have fun and have a good laugh with friends as you play!</p>
+    <h4 class="mb-6 text-white text-shadow--light">Just keep these in <span class="text-gradient--blue">mind?</span></h4>
+    <p class="mb-4 text-white text-shadow--light"><strong>1. Don't be a prick.</strong> Reach is meant to be a fun, light-hearted place for you and your friends to have a good laugh. Don’t upload photos without people's permission, don't upload anything obscene, don't come here to be a bully. Just...don't be a prick.</p>
+    <p class="text-white text-shadow--light"><strong>2. Being the reacher is dope.</strong> Think about it. If you're the reacher it means that you've landed someone "out of your league." Ain't that the dream? At the very least, it means you have a sparkling personality.</p>
+    <p class="text-white text-shadow--light">From a couple reachers to you, welcome to our app!</p>
     <%= link_to "Vote on Us!", survey_path(@sample_survey), class: "btn btn-gradient focus:outline-none w-full mt-8" %>
   </div>
-  <%= image_tag 'rules__photo_one.jpg', class: "rules__photo-one"%>
+  <%= image_tag 'about__photo_two.jpg', class: "about__photo-two"%>
 </div>
 
 <%# TODO: Introduce parallax effect here later down the road %>

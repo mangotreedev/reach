@@ -1,7 +1,7 @@
 require 'open-uri'
 
 puts "Clearing DB 🗑"
-# Survey.destroy_all
+Survey.destroy_all
 User.destroy_all
 
 puts "Creating Users 🤠"
