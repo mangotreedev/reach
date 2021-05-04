@@ -1,7 +1,7 @@
 require 'open-uri'
 
 puts "Clearing DB 🗑"
-# Survey.destroy_all
+Survey.destroy_all
 User.destroy_all
 
 puts "Creating Users 🤠"
@@ -14,43 +14,7 @@ puts "Created #{User.count} users"
 puts "---\n"
 
 puts "Creating Surveys 📸"
-file = URI.open("https://i.pinimg.com/originals/4b/4c/47/4b4c479b422d16d3d7f5e8836af8a819.jpg")
-survey = Survey.new(style: 0, published: true, user: User.first)
-survey.photo.attach(io: file, filename: 'temp.jpg', content_type: 'image/jpg')
-survey.save!
-print '.'
-
-file = URI.open("https://i.pinimg.com/originals/28/b3/06/28b306cd7aea119fb7fb642c91690628.jpg")
-survey = Survey.new(style: 0, published: true, user: User.first)
-survey.photo.attach(io: file, filename: 'temp.jpg', content_type: 'image/jpg')
-survey.save!
-print '.'
-
-file = URI.open("https://img.huffingtonpost.com/asset/5a8b0c162000003900eaf52f.jpeg?ops=1778_1000")
-survey = Survey.new(style: 0, published: true, user: User.first)
-survey.photo.attach(io: file, filename: 'temp.jpeg', content_type: 'image/jpeg')
-survey.save!
-print '.'
-
-file = URI.open("https://imgix.bustle.com/uploads/shutterstock/2020/7/28/d8734371-e868-4131-8d56-e0f4f080f1b2-shutterstock-1670077168.jpg?w=1200&h=630&fit=crop&crop=faces&fm=jpg")
-survey = Survey.new(style: 0, published: true, user: User.first)
-survey.photo.attach(io: file, filename: 'temp.jpg', content_type: 'image/jpg')
-survey.save!
-print '.'
-
-file = URI.open("https://cdn.icepop.com/wp-content/uploads/2019/09/19-Instagram-shotsofhennessey-7-2.jpg")
-survey = Survey.new(style: 0, published: true, user: User.first)
-survey.photo.attach(io: file, filename: 'temp.jpg', content_type: 'image/jpg')
-survey.save!
-print '.'
-
-file = URI.open("https://i.pinimg.com/originals/a7/78/45/a778452e94aad5800b676e429b5415e3.jpg")
-survey = Survey.new(style: 0, published: true, user: User.first)
-survey.photo.attach(io: file, filename: 'temp.jpg', content_type: 'image/jpg')
-survey.save!
-print '.'
-
-file = URI.open("https://c.stocksy.com/a/5nD400/z9/1006327.jpg")
+file  = File.open(File.join(Rails.root,'app/assets/images/about__photo_two.jpg'))
 survey = Survey.new(style: 0, published: true, user: User.first)
 survey.photo.attach(io: file, filename: 'temp.jpg', content_type: 'image/jpg')
 survey.save!

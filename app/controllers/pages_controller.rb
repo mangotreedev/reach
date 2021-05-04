@@ -6,8 +6,8 @@ class PagesController < ApplicationController
   end
 
   def about
-    @sample_survey = Survey.last
-    # @sample_survey = Survey.find(16)
+    @sample_survey = Survey.first
   end
+
   def kitchensink; end
 end

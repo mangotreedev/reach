@@ -12,6 +12,10 @@ class SurveysController < ApplicationController
       @surveys = @surveys.order(:created_at)
     when "votes"
       @surveys = @surveys.sort_by(&:total_votes).reverse!
+    when "couple"
+      @surveys = @surveys.where(style: :one_v_one_photo)
+    when "group"
+      @surveys = @surveys.where(style: :group_photo)
     end
   end
 
