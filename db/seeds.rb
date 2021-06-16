@@ -5,9 +5,11 @@ Survey.destroy_all
 User.destroy_all
 
 puts "Creating Users 🤠"
-User.create!(username: "Sy", email: "sy@mangotree.dev", password: "password", agree_terms: true)
+User.create!(username: "Sy", email: "sy@mangotree.dev", password: "password", agree_terms: true, admin: true)
 print "."
-User.create!(username: "Nico", email: "nico@mangotree.dev", password: "password", agree_terms: true)
+User.create!(username: "Nico", email: "nico@mangotree.dev", password: "password", agree_terms: true, admin: true)
+print ".\n"
+User.create!(username: "Karl", email: "karl.sofinowski@gmail.com", password: "password", agree_terms: true, admin: true)
 print ".\n"
 
 puts "Created #{User.count} users"
