@@ -14,6 +14,13 @@ puts "Created #{User.count} users"
 puts "---\n"
 
 puts "Creating Surveys 📸"
+
+file  = File.open(File.join(Rails.root,'app/assets/images/sample.jpg'))
+survey = Survey.new(style: 0, published: true, user: User.first)
+survey.photo.attach(io: file, filename: 'temp.jpg', content_type: 'image/jpg')
+survey.save!
+print '.'
+
 file  = File.open(File.join(Rails.root,'app/assets/images/about__photo_two.jpg'))
 survey = Survey.new(style: 0, published: true, user: User.first)
 survey.photo.attach(io: file, filename: 'temp.jpg', content_type: 'image/jpg')
