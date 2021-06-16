@@ -5,15 +5,22 @@ Survey.destroy_all
 User.destroy_all
 
 puts "Creating Users 🤠"
-User.create!(username: "Sy", email: "sy@mangotree.dev", password: "password", agree_terms: true)
+User.create!(username: "Sy", email: "sy@mangotree.dev", password: "password", agree_terms: true, admin: true)
 print "."
-User.create!(username: "Nico", email: "nico@mangotree.dev", password: "password", agree_terms: true)
+User.create!(username: "Karl", email: "karl.sofinowski@gmail.com", password: "password", agree_terms: true, admin: true)
 print ".\n"
 
 puts "Created #{User.count} users"
 puts "---\n"
 
 puts "Creating Surveys 📸"
+
+file  = File.open(File.join(Rails.root,'app/assets/images/sample.jpg'))
+survey = Survey.new(style: 0, published: true, user: User.first)
+survey.photo.attach(io: file, filename: 'temp.jpg', content_type: 'image/jpg')
+survey.save!
+print '.'
+
 file  = File.open(File.join(Rails.root,'app/assets/images/about__photo_two.jpg'))
 survey = Survey.new(style: 0, published: true, user: User.first)
 survey.photo.attach(io: file, filename: 'temp.jpg', content_type: 'image/jpg')

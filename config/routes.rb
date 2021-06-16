@@ -30,5 +30,3 @@ Rails.application.routes.draw do
     mount Blazer::Engine, at: "blazer", as: 'blazer_dashboard'
   end
 end
-
-# TODO: review full app and refactor wherever you can

@@ -28,6 +28,9 @@ const initTippy = () => {
   tippy(".report-btn", {
     content: "Report this photo",
   });
+  tippy(".reacher-def", {
+    content: "The person outkicking their coverage",
+  });
 }
 
 export default initTippy;

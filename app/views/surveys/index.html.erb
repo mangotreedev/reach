@@ -1,7 +1,7 @@
 <div class="gallery container mx-auto sm:w-full md:w-10/12 lg:w-3/4 p-4 relative">
   <%= inline_svg_tag "gradient_triangle.svg", class: "gradient-triangle" %>
   <%= inline_svg_tag "gradient_squiggles.svg", class: "gradient-squiggles" %>
-  <div class="tabs flex justify-center flex-wrap my-8 glass-card py-4">
+  <div class="tabs flex justify-center flex-wrap my-8 mx-20 glass-card py-4">
     <%= link_to "All <i class='fas fa-th'></i>".html_safe, surveys_path, class: "text-center text-white border-4 px-4 py-2 rounded m-2 hover:opacity-50 transition duration-300 #{add_background_for(params[:filter], nil)}"%>
     <%= link_to "Most Votes <i class='fas fa-award'></i>".html_safe, surveys_path(filter: "votes"), class: "text-center text-white border-4 px-4 py-2 rounded m-2 hover:opacity-50 transition duration-300 #{add_background_for(params[:filter], 'votes')}"%>
     <%= link_to "Most Controversial <i class='fas fa-sort-amount-down'></i>".html_safe, surveys_path(filter: "most"), class: "text-center text-white border-4 px-4 py-2 rounded m-2 hover:opacity-50 transition duration-300 #{add_background_for(params[:filter], 'most')}"%>
