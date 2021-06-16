@@ -4,8 +4,8 @@ namespace :db do
   task :copy_production => :environment do
 
     # Capture & Download latest dump
-    system("heroku pg:backups:capture --remote production")
-    system("heroku pg:backups:download --remote production")
+    system("heroku pg:backups:capture --remote prod")
+    system("heroku pg:backups:download --remote prod")
 
     # Get user and database name
     config   = Rails.configuration.database_configuration["development"]
