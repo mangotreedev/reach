@@ -45,6 +45,10 @@ gem 'active_storage_validations'
 
 gem 'inline_svg'
 
+# Background jobs thru sidekiq
+gem 'sidekiq'
+gem 'sidekiq-failures', '~> 1.0'
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
@@ -74,6 +78,8 @@ group :development do
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  # Preview mailers in browser as opposed to sending
+  gem 'letter_opener'
 end
 
 group :test do
