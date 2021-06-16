@@ -30,5 +30,3 @@ Rails.application.routes.draw do
     mount Blazer::Engine, at: "blazer", as: 'blazer_dashboard'
   end
 end
-
-# TODO: Add rake task to copy down prod data to local
