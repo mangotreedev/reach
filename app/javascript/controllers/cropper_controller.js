@@ -1,35 +1,39 @@
 import Cropper from "cropperjs";
 import { fetchWithToken } from "../utils/fetch_with_token";
+import { Toast } from "../utils/toast_mixin";
 import { Controller } from "stimulus";
 
 export default class extends Controller {
-  static targets = [ 'image' ];
+  static targets = ["image"];
 
   connect() {
     this.cropper = new Cropper(this.imageTarget, {
       aspectRatio: 4 / 5,
       movable: false,
-      zoomeOnWheel: false
+      zoomeOnWheel: false,
     });
   }
 
-  addChoice() {
-    const data = this.cropper.getData({rounded: true});
+  async addChoice() {
+    const data = this.cropper.getData({ rounded: true });
 
-    fetchWithToken(`/surveys/${this.data.get("survey-id")}/choices`, {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ choice: data }),
-    })
-    .then((response) => response.json())
-    .then((data) => {
-      const choicesContainer = document.querySelector('.choices__container');
-      choicesContainer.insertAdjacentHTML('beforeend', data.choice)
+    const response = await fetchWithToken(
+      `/surveys/${this.data.get("survey-id")}/choices`,
+      {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ choice: data }),
+      }
+    );
+    const responseData = await response.json();
+    const choicesContainer = document.querySelector(".choices__container");
+    choicesContainer.insertAdjacentHTML("beforeend", responseData.choice);
+    Toast.fire({
+      icon: "success",
+      title: "Choice successfully added",
     });
-  };
+  }
 }
-
-// TODO: Make controller async and add confirmation toast after choice upload
