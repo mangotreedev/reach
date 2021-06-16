@@ -32,4 +32,4 @@ export default class extends Controller {
   };
 }
 
-// REFACTOR: Make controller async
+// TODO: Make controller async and add confirmation toast after choice upload
