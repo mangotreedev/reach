@@ -2,7 +2,7 @@
   <%= inline_svg_tag "gradient_triangle.svg", class: "gradient-triangle" %>
   <%= inline_svg_tag "gradient_squiggles.svg", class: "gradient-squiggles" %>
   <div class="survey__photo relative">
-    <%= cl_image_tag survey.photo.key, height: 500, width: 700, crop: :limit, format: :jpg, class: 'rounded-sm' %>
+    <%= cl_image_tag survey.photo.key, crop: :limit, format: :jpg, class: 'rounded-sm' %>
     <div class="survey__options-block absolute bottom-2 right-3 flex">
       <div data-controller="modal">
         <i class="fas fa-flag text-red-500 inline-block hover:text-red-400 transition duration-300 cursor-pointer text-4xl report-btn" data-action='click->modal#display'></i>

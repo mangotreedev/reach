@@ -2,7 +2,7 @@
   <%= inline_svg_tag "gradient_triangle.svg", class: "gradient-triangle" %>
   <%= inline_svg_tag "gradient_squiggles.svg", class: "gradient-squiggles" %>
   <div class="survey__photo relative">
-    <%= cl_image_tag @survey.photo.key, height: 500, width: 700, crop: :fill, format: :jpg, class: 'rounded-sm' %>
+    <%= cl_image_tag @survey.photo.key, crop: :fill, format: :jpg, class: 'rounded-sm' %>
     <div class="survey__options-block absolute bottom-2 right-3 flex">
       <%= render 'shared/share_btn', survey: @survey %>
     </div>
