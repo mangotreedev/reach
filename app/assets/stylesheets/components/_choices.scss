@@ -1,7 +1,7 @@
 .choices {
   .gradient-triangle {
     position: absolute;
-    z-index: 0;
+    z-index: -1;
     bottom: -10%;
     right: -10%;
     transform: rotate(120deg);
@@ -9,7 +9,7 @@
   }
   .gradient-squiggles {
     position: absolute;
-    z-index: 0;
+    z-index: -1;
     bottom: 8%;
     left: -10%;
     transform: rotate(45deg);

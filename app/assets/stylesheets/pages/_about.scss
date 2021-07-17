@@ -10,14 +10,14 @@
   }
   .gradient-triangle {
     position: absolute;
-    z-index: 0;
+    z-index: -1;
     bottom: 6%;
     left: 0;
     transform: rotate(28deg);
   }
   .gradient-squiggles {
     position: absolute;
-    z-index: 0;
+    z-index: -1;
     top: -1%;
     right: -5%;
     transform: rotate(120deg);
