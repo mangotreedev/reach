@@ -46,6 +46,10 @@ class Survey < ApplicationRecord
 
   end
 
+  def voted_on?(cookie)
+    Survey.joins(choices: :votes).where(choices: { votes: {cookie: cookie}}).include?(self)
+  end
+
   private
 
   def vote_counts

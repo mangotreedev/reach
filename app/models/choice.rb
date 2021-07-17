@@ -10,3 +10,5 @@ class Choice < ApplicationRecord
     votes.count
   end
 end
+
+# TODO: Make sure results page redirects if there are no votes yet

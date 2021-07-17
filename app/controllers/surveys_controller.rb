@@ -38,6 +38,7 @@ class SurveysController < ApplicationController
   def show
     @survey = Survey.includes(:choices).find(params[:id])
     authorize @survey
+    redirect_to survey_results_path(@survey) if @survey.voted_on?(@cookie)
   end
 
   def destroy
