@@ -31,6 +31,9 @@ const initTippy = () => {
   tippy(".reacher-def", {
     content: "The person outkicking their coverage",
   });
+  tippy("choices-def", {
+    content: "You know, the little faces you'd vote on",
+  });
 }
 
 export default initTippy;

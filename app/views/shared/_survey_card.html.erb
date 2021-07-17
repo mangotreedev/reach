@@ -34,13 +34,17 @@
   </div>
 
   <div class="survey__choices mt-12 mb-4 glass-card p-4">
-    <h3 class="text-white mt-0 text-shadow--light">Who's the <span class="reacher-def">reacher?</span></h3>
-    <div class="choices flex w-full justify-center flex-wrap">
-      <% survey.choices.each do |choice| %>
-        <%= link_to choice_votes_path(choice), method: :post, class: 'w-1/4 border-8 border-transparent hover:border-white' do %>
-          <%= render 'choices/choice', choice: choice %>
+    <% if survey.choices.empty? %>
+      <h3 class="text-white mt-0 text-shadow--light">No <span class="choices-def">choices</span> added yet 😐</h3>
+    <% else %>
+      <h3 class="text-white mt-0 text-shadow--light">Who's the <span class="reacher-def">reacher?</span></h3>
+      <div class="choices flex w-full justify-center flex-wrap">
+        <% survey.choices.each do |choice| %>
+          <%= link_to choice_votes_path(choice), method: :post, class: 'w-1/4 border-8 border-transparent hover:border-white' do %>
+            <%= render 'choices/choice', choice: choice %>
+          <% end %>
         <% end %>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
 </div>
