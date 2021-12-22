@@ -10,4 +10,8 @@ class Choice < ApplicationRecord
   def votes_count
     votes.count
   end
+
+  def for_json
+    [ "choice_#{id}", percentage_of_vote ]
+  end
 end
