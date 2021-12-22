@@ -12,6 +12,6 @@ class Choice < ApplicationRecord
   end
 
   def for_json
-    [ "choice_#{id}", percentage_of_vote ]
+    [ "choice_#{id}", percentage_of_vote * 100 ]
   end
 end

@@ -9,7 +9,11 @@ const initResultsCable = () => {
       { channel: "ResultsChannel", id: id },
       {
         received(data) {
-          console.log(data); // called when data is broadcast in the cable
+          for (const choice in data) {
+            const choiceElement = document.getElementById(choice);
+            choiceElement.querySelector('.choice-percentage').innerHTML = Number.parseFloat(data[choice]).toFixed(2);
+            choiceElement.querySelector('.js-completed-bar').style.width = `${Math.round(data[choice])}%`;
+          }
         },
       }
     );
