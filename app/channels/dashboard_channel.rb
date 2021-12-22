@@ -1,7 +1,5 @@
 class DashboardChannel < ApplicationCable::Channel
   def subscribed
-    survey = Survey.find(params[:id])
-    stream_for survey
+    stream_for current_user
   end
-
 end
