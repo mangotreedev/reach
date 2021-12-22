@@ -7,6 +7,6 @@ class Vote < ApplicationRecord
   private
 
   def broadcast_results
-
+    ResultsChannel.broadcast_to(self.survey, "hello world")
   end
 end

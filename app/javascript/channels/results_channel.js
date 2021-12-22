@@ -8,7 +8,7 @@ const initResultsCable = () => {
     consumer.subscriptions.create(
       { channel: "ResultsChannel", id: id },
       {
-        subscribed() {
+        connected() {
           console.log("ResultsChannel Subscribed! 🎉");
         },
         received(data) {
