@@ -1,5 +1,7 @@
-<div class="choice flex py-3 justify-between items-center border-8 border-white rounded m-4 relative progress-bar">
-  <h6 class="text-white text-shadow--light ml-4"><%= (choice.percentage_of_vote * 100).round(2) %>% Reacher</h6>
+<div class="choice flex py-3 justify-between items-center border-8 border-white rounded m-4 relative progress-bar" id="<%= dom_id(choice) %>">
+  <h6 class="text-white text-shadow--light ml-4">
+    <span class="choice-percentage"><%= (choice.percentage_of_vote * 100).round(2) %></span>% Reacher
+  </h6>
   <%= cl_image_tag @survey.photo.key, x: choice.x, y: choice.y, width: choice.width, height: choice.height, crop: :crop, class: 'w-16 h-20 rounded object-cover mr-4', format: :jpg %>
   <div class="js-completed-bar completed-bar gradient--blue" data-complete="<%= (choice.percentage_of_vote * 100).round %>">
   </div>
