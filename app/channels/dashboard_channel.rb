@@ -1,9 +1,7 @@
 class DashboardChannel < ApplicationCable::Channel
   def subscribed
-    # stream_from "some_channel"
+    survey = Survey.find(params[:id])
+    stream_for survey
   end
 
-  def unsubscribed
-    # Any cleanup needed when channel is unsubscribed
-  end
 end
