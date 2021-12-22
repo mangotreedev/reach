@@ -31,6 +31,7 @@ import initTippy from "../plugins/init_tippy";
 import { fireSweetAlert } from "../utils/fire_sweet_alert";
 import { initProgressBar } from "../components/init_progress_bar"
 
+
 document.addEventListener('turbolinks:load', () => {
   initAlerts();
   initNavbarScroll();
@@ -39,6 +40,7 @@ document.addEventListener('turbolinks:load', () => {
   fireSweetAlert();
   initTippy();
   initProgressBar();
+  initResultsCable();
 });
 
 
