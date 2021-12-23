@@ -2,11 +2,11 @@ class Vote < ApplicationRecord
   belongs_to :choice
   delegate :survey, to: :choice, allow_nil: true
 
-  after_create :broadcast_results
+  after_create :broadcast
 
   private
 
-  def broadcast_results
+  def broadcast
     survey_data = survey.choices.map { |choice| choice.for_json }.to_h
     dashboard_data = { "survey_#{survey.id}": survey.total_votes }
 
