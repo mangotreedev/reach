@@ -7,7 +7,10 @@ class Vote < ApplicationRecord
   private
 
   def broadcast_results
-    data = survey.choices.map { |choice| choice.for_json }.to_h
-    ResultsChannel.broadcast_to(survey, data)
+    survey_data = survey.choices.map { |choice| choice.for_json }.to_h
+    dashboard_data = { "survey_#{survey.id}": survey.total_votes }
+
+    ResultsChannel.broadcast_to(survey, survey_data)
+    DashboardChannel.broadcast_to(survey.user, dashboard_data)
   end
 end
