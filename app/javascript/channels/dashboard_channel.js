@@ -9,7 +9,8 @@ const initUserDashboardCable = () => {
       { channel: "DashboardChannel", id: id },
       {
         received(data) {
-          console.log(data);
+          const surveyElement = document.getElementById(Object.keys(data)[0]);
+          surveyElement.querySelector('.vote-count').innerText = Object.values(data)[0];
         },
       }
     );
