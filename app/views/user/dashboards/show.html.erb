@@ -1,8 +1,8 @@
 <% if @user_surveys.any? %>
-  <div class="container mx-auto sm:w-full md:w-10/12 lg:w-3/4 py-12">
+  <div class="container mx-auto sm:w-full md:w-10/12 lg:w-3/4 py-12" id="user-dashboard" data-user-id="<%= current_user.id %>">
     <div class="surveys-masonry">
       <% @user_surveys.each do |survey| %>
-        <div class="survey-tile rounded" data-controller="tile" data-survey=<%= survey.id %>>
+        <div class="survey-tile rounded" data-controller="tile" data-survey=<%= survey.id %> id="<%= dom_id(survey) %>">
           <div data-controller="modal">
             <div class="survey-tile__status-block" data-tile-target="status">
               <% if !survey.approved? %>
@@ -15,7 +15,7 @@
                 </span>
               <% else %>
                 <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-green-600 bg-green-200 uppercase last:mr-0 mr-1">
-                  LIVE: <%= pluralize(survey.total_votes, 'vote') %>
+                  LIVE: <span class="vote-count"><%= pluralize(survey.total_votes, 'vote') %></span>
                 </span>
               <% end %>
             </div>

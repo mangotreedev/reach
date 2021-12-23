@@ -3,7 +3,9 @@ const initAlerts = () => {
 
   const hideAlert = (event) => { event.currentTarget.closest('[role="alert"]').classList.add('hidden')};
 
-  alerts.forEach(alert => alert.querySelector('[role="button"]').addEventListener('click', hideAlert));
+  if (alerts.length > 0) {
+    alerts.forEach(alert => alert.querySelector('[role="button"]').addEventListener('click', hideAlert));
+  }
 };
 
 export default initAlerts;

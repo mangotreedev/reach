@@ -12,6 +12,7 @@ class Survey < ApplicationRecord
 
   scope :published, -> { where(published: true) }
   scope :approved, -> { where(approved: true) }
+  scope :with_choices, -> { joins(:choices).uniq }
 
   #                   0                1
   enum style: [:one_v_one_photo, :group_photo]

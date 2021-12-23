@@ -13,7 +13,7 @@ Turbolinks.start()
 ActiveStorage.start()
 
 // ----------------------------------------------------
-// Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
+// Note: ABOVE IS RAILS DEFAULT CONFIGURATION
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
 // ----------------------------------------------------
 
@@ -21,7 +21,6 @@ ActiveStorage.start()
 import "../stylesheets/application"
 
 // Internal imports, e.g:
-// import { initSelect2 } from '../components/init_select2';
 import "controllers";
 import initAlerts from '../components/init_alerts';
 import initNavbarScroll from '../components/init_navbar_scroll';
@@ -30,6 +29,7 @@ import initMasonry from "../plugins/init_masonry";
 import initTippy from "../plugins/init_tippy";
 import { fireSweetAlert } from "../utils/fire_sweet_alert";
 import { initProgressBar } from "../components/init_progress_bar"
+
 
 document.addEventListener('turbolinks:load', () => {
   initAlerts();

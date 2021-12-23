@@ -15,7 +15,7 @@
       <h3 class="text-white mt-0 text-shadow--light">No results yet 😔</h3>
     <% else %>
       <h3 class="text-white mt-0 text-shadow--light">The results</h3>
-      <div class="choices">
+      <div class="choices" id="resultsContainer" data-survey-id="<%= @survey.id %>">
         <% @survey.choices.each do |choice| %>
           <%= render 'choices/result', choice: choice %>
         <% end %>
@@ -23,6 +23,3 @@
     <% end %>
   </div>
 </div>
-
-<%# TODO: Add  real time features for vote count and survey results %>
-
