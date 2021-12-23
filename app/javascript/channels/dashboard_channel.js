@@ -3,12 +3,11 @@ import consumer from "./consumer";
 const initUserDashboardCable = () => {
   const userDashboard = document.getElementById("user-dashboard");
   if (userDashboard) {
+    const id = userDashboard.dataset.userId;
+
     consumer.subscriptions.create(
-      { channel: "DashboardChannel" },
+      { channel: "DashboardChannel", id: id },
       {
-        connected() {
-          console.log("DashboardChannel is connected! 🎉");
-        },
         received(data) {
           console.log(data);
         },
